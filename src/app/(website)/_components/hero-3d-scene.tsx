@@ -427,6 +427,7 @@ function ConnectorLines({ activeKey }: { activeKey: string | null }) {
       {lines.map((l) => {
         const isActive = activeKey === l.key;
         return (
+          // @ts-expect-error — R3F's <line> conflicts with the DOM SVG <line> type; this is Three.js's <line>, works fine at runtime
           <line key={l.key} geometry={l.geometry}>
             <lineBasicMaterial
               color={isActive ? l.color : "#3d4166"}
@@ -451,6 +452,7 @@ function OrbitPath() {
     return new THREE.BufferGeometry().setFromPoints(pts);
   }, []);
   return (
+    // @ts-expect-error — R3F's <line> conflicts with the DOM SVG <line> type; this is Three.js's <line>, works fine at runtime
     <line geometry={points}>
       <lineBasicMaterial color="#4c5384" transparent opacity={0.25} />
     </line>
