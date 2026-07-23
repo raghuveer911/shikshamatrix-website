@@ -1,0 +1,61 @@
+<svg width="360" height="320" viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="EcapTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="45%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+    <linearGradient id="EcapSide" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="EpageL" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#a5b4fc"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="EpageR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(180, 175)">
+    <path d="M-6,90 C-42,54 -95,43 -140,51 L-140,-14 C-93,-25 -40,-11 -6,20 Z" fill="url(#EpageL)"/>
+    <path d="M6,90 C42,54 95,43 140,51 L140,-14 C93,-25 40,-11 6,20 Z" fill="url(#EpageR)"/>
+    <path d="M-6,20 L-6,90 L0,96 L6,90 L6,20 L0,14 Z" fill="#312e81"/>
+    <g stroke="rgba(255,255,255,0.6)" stroke-width="1.8" fill="none" stroke-linecap="round">
+      <path d="M-122,6 C-86,-3 -47,4 -20,25"/>
+      <path d="M-122,23 C-86,14 -47,21 -20,42"/>
+      <path d="M-122,40 C-86,31 -47,38 -20,59"/>
+      <path d="M122,6 C86,-3 47,4 20,25"/>
+      <path d="M122,23 C86,14 47,21 20,42"/>
+      <path d="M122,40 C86,31 47,38 20,59"/>
+    </g>
+    <line x1="-97" y1="31" x2="-72" y2="47" stroke="#f59e0b" stroke-width="1.1" opacity="0.8"/>
+    <line x1="-72" y1="47" x2="-83" y2="64" stroke="#f59e0b" stroke-width="1.1" opacity="0.8"/>
+    <circle cx="-97" cy="31" r="3" fill="#fbbf24"/>
+    <circle cx="-72" cy="47" r="3.8" fill="#f59e0b"/>
+    <circle cx="-83" cy="64" r="2.8" fill="#fbbf24"/>
+    <line x1="76" y1="28" x2="94" y2="44" stroke="#818cf8" stroke-width="1.1" opacity="0.8"/>
+    <circle cx="76" cy="28" r="3" fill="#a5b4fc"/>
+    <circle cx="94" cy="44" r="3.6" fill="#818cf8"/>
+    <g transform="translate(0, -108)">
+      <path d="M-42,8 L-42,33 C-42,43 42,43 42,33 L42,8 Z" fill="url(#EcapSide)"/>
+      <ellipse cx="0" cy="33" rx="42" ry="9.5" fill="#27246b"/>
+      <polygon points="0,-30 103,3 0,36 -103,3" fill="url(#EcapTop)"/>
+      <polygon points="0,-30 103,3 0,-22 -103,3" fill="rgba(255,255,255,0.2)"/>
+      <g stroke="rgba(255,255,255,0.25)" stroke-width="1">
+        <line x1="-51" y1="-13.5" x2="51" y2="19.5"/>
+        <line x1="-76" y1="-5.5" x2="26" y2="27.5"/>
+        <line x1="51" y1="-13.5" x2="-51" y2="19.5"/>
+        <line x1="76" y1="-5.5" x2="-26" y2="27.5"/>
+      </g>
+      <circle cx="0" cy="3" r="5" fill="#f59e0b"/>
+      <path d="M0,3 C30,11 55,28 64,61" fill="none" stroke="#f59e0b" stroke-width="3.6" stroke-linecap="round"/>
+      <circle cx="64" cy="63" r="6.2" fill="#f59e0b"/>
+      <path d="M60,69 L60,89 M64,69 L64,93 M68,69 L68,87" stroke="#d97706" stroke-width="2.8" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
