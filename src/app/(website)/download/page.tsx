@@ -9,7 +9,7 @@ import { WebsiteNavbar, WebsiteFooter, Reveal, SectionHeading } from "../_compon
 
 // Where the actual APK file lives — drop the real file at
 // apps/web/public/downloads/ShikshaMatrix.apk and this just works.
-const APK_URL = "/downloads/ShikshaMatrix.apk";
+const APK_URL = "/downloads/shikshamatrix.apk";
 const APK_VERSION = "1.0.0";
 const APK_SIZE = "~28 MB";
 
