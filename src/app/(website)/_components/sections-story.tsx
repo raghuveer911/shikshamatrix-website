@@ -61,7 +61,7 @@ export function HeroSection() {
         </div>
 
         {/* Right — floating 3D school ecosystem */}
-        <Reveal delay={250} className="relative mx-auto hidden aspect-square w-full max-w-[520px] sm:block">
+        <Reveal delay={250} className="relative mx-auto mt-4 aspect-square w-full max-w-[380px] sm:mt-0 sm:max-w-[440px] lg:max-w-[560px] xl:max-w-[620px]">
           <HeroVisual />
         </Reveal>
       </div>

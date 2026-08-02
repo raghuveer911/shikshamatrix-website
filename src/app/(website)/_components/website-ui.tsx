@@ -232,6 +232,12 @@ export function WebsiteNavbar() {
           ))}
           <div className="my-2 h-px bg-[var(--sm-border)]" />
           <Link href={APP_LINKS.login} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/5">School Login</Link>
+          <Link href={APP_LINKS.download} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/5">
+            Teacher / Staff <span className="ml-1 text-[10px] text-indigo-300">Mobile App</span>
+          </Link>
+          <Link href={APP_LINKS.download} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/5">
+            Parent / Student <span className="ml-1 text-[10px] text-indigo-300">Mobile App</span>
+          </Link>
           <Link href={APP_LINKS.register} className="mt-2 block rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 px-4 py-3 text-center text-sm font-semibold text-white">
             Register Your School
           </Link>
