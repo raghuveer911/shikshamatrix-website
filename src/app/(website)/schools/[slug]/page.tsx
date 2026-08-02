@@ -285,7 +285,7 @@ export default function SchoolWebsitePage() {
         {heroSrc && (
           <Reveal delay={220} className="mx-auto mt-12 max-w-4xl">
             <div className="overflow-hidden rounded-2xl sm:rounded-[2rem] shadow-2xl shadow-gray-900/10 ring-1 ring-gray-900/5">
-              <img src={heroSrc} alt={school.name} className="w-full object-cover" style={{ maxHeight: 460 }} />
+              <img src={heroSrc} alt={school.name} className="w-full object-cover" style={{ maxHeight: 460 }} loading="eager" fetchPriority="high" />
             </div>
           </Reveal>
         )}
@@ -323,7 +323,7 @@ export default function SchoolWebsitePage() {
             </Reveal>
             {aboutSrc && (
               <Reveal delay={100}>
-                <img src={aboutSrc} alt="About" className="w-full rounded-2xl sm:rounded-3xl object-cover shadow-lg" style={{ maxHeight: 340 }} />
+                <img src={aboutSrc} alt="About" className="w-full rounded-2xl sm:rounded-3xl object-cover shadow-lg" style={{ maxHeight: 340 }} loading="lazy" />
               </Reveal>
             )}
           </div>
@@ -337,7 +337,7 @@ export default function SchoolWebsitePage() {
             <Quote size={32} className="mx-auto mb-4 opacity-20" style={{ color: primary }} />
             <p className="text-lg sm:text-xl leading-relaxed text-gray-700 italic whitespace-pre-line">&ldquo;{config.principalMessage}&rdquo;</p>
             <div className="mt-6 flex items-center justify-center gap-3">
-              {principalSrc ? <img src={principalSrc} alt={config.principalName ?? ""} className="h-12 w-12 rounded-full object-cover" /> : <div className="h-12 w-12 rounded-full" style={{ background: primary }} />}
+              {principalSrc ? <img src={principalSrc} alt={config.principalName ?? ""} className="h-12 w-12 rounded-full object-cover" loading="lazy" /> : <div className="h-12 w-12 rounded-full" style={{ background: primary }} />}
               <div className="text-left">
                 <p className="font-bold text-gray-900 text-sm">{config.principalName ?? "Principal"}</p>
                 <p className="text-xs text-gray-400">Principal, {school.name}</p>
@@ -412,7 +412,7 @@ export default function SchoolWebsitePage() {
               return (
                 <Reveal key={g.id} delay={(i % 3) * 80}>
                   <div className="overflow-hidden rounded-xl sm:rounded-2xl">
-                    <img src={src} alt={g.caption ?? ""} className="aspect-square w-full object-cover hover:scale-[1.06] transition-transform duration-500" />
+                    <img src={src} alt={g.caption ?? ""} className="aspect-square w-full object-cover hover:scale-[1.06] transition-transform duration-500" loading="lazy" />
                   </div>
                 </Reveal>
               );
@@ -457,7 +457,7 @@ export default function SchoolWebsitePage() {
                     <Quote size={20} className="mb-3 opacity-20" style={{ color: primary }} />
                     <p className="text-[15px] text-gray-700 leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
                     <div className="mt-5 flex items-center gap-3">
-                      {photo ? <img src={photo} alt={t.authorName} className="h-9 w-9 rounded-full object-cover" /> : <div className="h-9 w-9 rounded-full" style={{ background: primary }} />}
+                      {photo ? <img src={photo} alt={t.authorName} className="h-9 w-9 rounded-full object-cover" loading="lazy" /> : <div className="h-9 w-9 rounded-full" style={{ background: primary }} />}
                       <div>
                         <p className="text-sm font-bold text-gray-900">{t.authorName}</p>
                         {t.role && <p className="text-xs text-gray-400">{t.role}</p>}
