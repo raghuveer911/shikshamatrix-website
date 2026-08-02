@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const data: ServiceLandingData = {
+  slug: "school-fee-management-software",
   eyebrow: "Fee Management Software",
   h1: "Stop Chasing Fee Dues Every Month",
   subhead:

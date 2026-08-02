@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const data: ServiceLandingData = {
+  slug: "school-attendance-software",
   eyebrow: "Attendance Software",
   h1: "Attendance That Takes Seconds, Not Minutes",
   subhead:

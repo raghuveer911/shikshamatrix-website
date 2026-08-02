@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const data: ServiceLandingData = {
+  slug: "school-erp-software",
   eyebrow: "School ERP Software",
   h1: "One School ERP for Everything Your School Runs On",
   subhead:

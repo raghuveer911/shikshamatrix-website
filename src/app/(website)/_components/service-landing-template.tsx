@@ -10,6 +10,7 @@ import Link from "next/link";
 import { WebsiteNavbar, WebsiteFooter, Reveal, SectionHeading, PrimaryCTA, GhostCTA, APP_LINKS } from "./website-ui";
 
 export interface ServiceLandingData {
+  slug: string;   // e.g. "school-erp-software" — used to build the breadcrumb URL
   eyebrow: string;
   h1: string;
   subhead: string;
@@ -18,6 +19,24 @@ export interface ServiceLandingData {
   benefits: string[];
   faqs: { q: string; a: string }[];
   relatedPages: { label: string; href: string }[];
+}
+
+function BreadcrumbStructuredData({ slug, label }: { slug: string; label: string }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://shikshamatrix.in/" },
+      { "@type": "ListItem", position: 2, name: label, item: `https://shikshamatrix.in/${slug}` },
+    ],
+  };
+  return (
+    <script
+      type="application/ld+json"
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
 }
 
 export function FAQStructuredData({ faqs }: { faqs: { q: string; a: string }[] }) {
@@ -40,11 +59,12 @@ export function FAQStructuredData({ faqs }: { faqs: { q: string; a: string }[] }
 }
 
 export function ServiceLandingPage({ data }: { data: ServiceLandingData }) {
-  const { eyebrow, h1, subhead, problems, features, benefits, faqs, relatedPages } = data;
+  const { slug, eyebrow, h1, subhead, problems, features, benefits, faqs, relatedPages } = data;
 
   return (
     <>
       <FAQStructuredData faqs={faqs} />
+      <BreadcrumbStructuredData slug={slug} label={eyebrow} />
       <WebsiteNavbar />
       <main className="sm-mesh min-h-screen pb-24 pt-36 lg:pt-44">
         {/* Hero */}

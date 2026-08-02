@@ -23,10 +23,13 @@ export default function BlogIndexPage() {
             {BLOG_POSTS.map((post, i) => (
               <Reveal key={post.slug} delay={i * 60}>
                 <Link href={`/blog/${post.slug}`} className="sm-glass sm-glass-hover block rounded-2xl p-6">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-indigo-300">
-                    {new Date(post.date).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })} · {post.readMinutes} min read
-                  </p>
-                  <h2 className="sm-display mt-2 text-xl font-bold text-[var(--sm-text)]">{post.title}</h2>
+                  <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider">
+                    <span className="rounded-full bg-indigo-500/15 px-2.5 py-1 text-indigo-300">{post.category}</span>
+                    <span className="text-[var(--sm-muted)]">
+                      {new Date(post.date).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })} · {post.readMinutes} min read
+                    </span>
+                  </div>
+                  <h2 className="sm-display mt-3 text-xl font-bold text-[var(--sm-text)]">{post.title}</h2>
                   <p className="mt-2 text-sm leading-relaxed text-[var(--sm-muted)]">{post.description}</p>
                 </Link>
               </Reveal>
