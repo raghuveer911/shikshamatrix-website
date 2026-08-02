@@ -64,8 +64,8 @@ function shade(hex: string, percent: number): string {
   return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
 }
 
-function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  return <div className={`opacity-0 translate-y-3 animate-[fadeUp_0.6s_ease-out_forwards] ${className}`} style={{ animationDelay: `${delay}ms` }}>{children}</div>;
+function Reveal({ children, className = "", delay = 0, style = {} }: { children: React.ReactNode; className?: string; delay?: number; style?: React.CSSProperties }) {
+  return <div className={`opacity-0 translate-y-3 animate-[fadeUp_0.6s_ease-out_forwards] ${className}`} style={{ animationDelay: `${delay}ms`, ...style }}>{children}</div>;
 }
 
 function Eyebrow({ children, color }: { children: React.ReactNode; color: string }) {
