@@ -22,6 +22,147 @@ const SHIKSHAMATRIX_AUTHOR = { name: "ShikshaMatrix Team", role: "School ERP Pro
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "how-to-choose-school-erp-software",
+    title: "How to Choose the Right School ERP Software: A Buyer's Checklist",
+    description: "A practical checklist for evaluating School ERP options — what to test before committing, and questions worth asking any vendor.",
+    date: "2026-08-02",
+    readMinutes: 8,
+    category: "Guides",
+    tags: ["school erp", "buyer's guide", "school management software"],
+    author: SHIKSHAMATRIX_AUTHOR,
+    content: [
+      {
+        paragraphs: [
+          "Choosing a School ERP is a decision most schools make once and live with for years — switching systems later means migrating years of student records, which nobody wants to do twice. That makes it worth slowing down and evaluating properly rather than picking based on a demo call alone.",
+        ],
+      },
+      {
+        heading: "Ask to see the parent and student experience, not just the admin panel",
+        paragraphs: [
+          "Most ERP sales demos focus heavily on the school admin panel, since that's what the person buying will use directly. But the parent and student experience is what determines whether the system actually gets used day to day. Ask specifically to see the Parent App and Student App, not just screenshots of the admin dashboard.",
+        ],
+      },
+      {
+        heading: "Check whether pricing tiers restrict core apps",
+        paragraphs: [
+          "Some ERPs use pricing tiers to gate access to entire apps — for example, only allowing a Parent App on higher-priced plans. This is worth asking about directly: does every plan include the core apps (admin, staff, student, parent), or does the entry-level plan leave some user group without proper access? A system that treats parents as a premium add-on tends to create adoption problems later.",
+        ],
+      },
+      {
+        heading: "Ask how data isolation actually works",
+        paragraphs: [
+          "If the vendor serves multiple schools on one platform (as most modern School ERPs do), ask specifically how one school's data is kept separate from another's. 'Multi-tenant' is the term to listen for — it means data isolation is built into the system's architecture, not just enforced by a permission setting that could theoretically be misconfigured.",
+        ],
+      },
+      {
+        heading: "Test the fee collection workflow specifically",
+        paragraphs: [
+          "Fee collection is usually the highest-stakes module for a school, since it directly affects cash flow. Ask to see the actual due-reminder and receipt-generation flow, not just a features list. Does a payment update the student's ledger immediately? Are receipts generated automatically? Do parents get notified before a due date, or only after?",
+        ],
+      },
+      {
+        heading: "Understand what happens if you outgrow your plan",
+        paragraphs: [
+          "Ask how upgrading works if your school grows past your current plan's student limit, or if you need a feature currently reserved for a higher tier. A vendor with a clear, straightforward upgrade path is a good sign; vague answers here are worth noting.",
+        ],
+      },
+      {
+        heading: "Bringing it together",
+        paragraphs: [
+          "None of this replaces trying the system yourself with your school's actual data. But going into evaluation with these specific questions — about the parent/student experience, data isolation, fee workflow, and plan flexibility — tends to surface the real differences between School ERPs much faster than a generic feature comparison chart.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "digital-school-transformation-roadmap",
+    title: "Digital School Transformation: A Practical Roadmap",
+    description: "Moving a school from paper-based processes to a digital system doesn't have to happen all at once — a practical, phased approach that actually sticks.",
+    date: "2026-08-02",
+    readMinutes: 7,
+    category: "Guides",
+    tags: ["digital transformation", "school management software", "onboarding"],
+    author: SHIKSHAMATRIX_AUTHOR,
+    content: [
+      {
+        paragraphs: [
+          "Moving a school from paper registers and spreadsheets to a digital system can feel daunting — not because any single step is hard, but because trying to change everything at once tends to overwhelm staff and stall out. A phased approach tends to work better in practice.",
+        ],
+      },
+      {
+        heading: "Start with the highest-friction process, not everything at once",
+        paragraphs: [
+          "Rather than trying to digitize admissions, attendance, fees, and communication simultaneously, most schools have more success starting with whichever single process is causing the most day-to-day pain — often fee collection or attendance. Getting one process working smoothly builds staff confidence before adding the next.",
+        ],
+      },
+      {
+        heading: "Migrate current-year data first, not years of history",
+        paragraphs: [
+          "It's tempting to want every historical record digitized before going live, but this often delays the actual transition indefinitely. Migrating the current academic year's active students, staff, and fee structures is usually enough to start — historical data can be added later if genuinely needed, without blocking the switch.",
+        ],
+      },
+      {
+        heading: "Get one 'champion' staff member comfortable first",
+        paragraphs: [
+          "Rather than training the entire staff simultaneously, having one or two staff members become genuinely comfortable with the new system first — and then help the rest of the team — tends to work better than a single all-hands training session that nobody fully absorbs.",
+        ],
+      },
+      {
+        heading: "Communicate the change to parents clearly, once",
+        paragraphs: [
+          "When switching to a system with a Parent App, a clear one-time communication (a printed notice, an SMS, and word from teachers) explaining what's changing and how to get the app installed goes a long way toward smooth adoption, rather than assuming parents will discover it on their own.",
+        ],
+      },
+      {
+        heading: "Expect a few weeks of adjustment, not instant perfection",
+        paragraphs: [
+          "Most schools see real time savings within the first month, but the first couple of weeks typically involve some adjustment as staff build new habits. Planning for that adjustment period, rather than expecting instant results, tends to lead to a much smoother transition overall.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "school-attendance-system-guide",
+    title: "School Attendance System: What Actually Changes When You Go Digital",
+    description: "A closer look at how digital attendance tracking changes daily routines for teachers, front-office staff, and parents.",
+    date: "2026-08-02",
+    readMinutes: 6,
+    category: "Guides",
+    tags: ["attendance", "digital transformation", "parent communication"],
+    author: SHIKSHAMATRIX_AUTHOR,
+    content: [
+      {
+        paragraphs: [
+          "Attendance tracking sounds like a simple thing to digitize, but the actual day-to-day change it brings is bigger than it looks on paper — it touches teachers, front-office staff, and parents differently.",
+        ],
+      },
+      {
+        heading: "For teachers: seconds instead of minutes, every period",
+        paragraphs: [
+          "Marking a physical register by hand, roll number by roll number, takes a few minutes at the start of every period. Digital attendance — marking a whole class in seconds from a phone — adds up to real teaching time recovered across a full school day, multiplied across every teacher.",
+        ],
+      },
+      {
+        heading: "For front-office staff: no more manual monthly compilation",
+        paragraphs: [
+          "At most schools, someone in the front office spends real time each month compiling attendance percentages from paper registers into a report for management. When attendance is digital from the start, that report is available instantly, without a separate compilation step.",
+        ],
+      },
+      {
+        heading: "For parents: same-day awareness instead of after-the-fact",
+        paragraphs: [
+          "Perhaps the biggest practical change is for parents. With a paper register, a parent typically only learns their child was absent if the school specifically calls to follow up, often days later if at all. With automatic notification through a Parent App, a parent knows the same day — which matters both for safety and for catching patterns of absenteeism early.",
+        ],
+      },
+      {
+        heading: "The pattern-visibility change is easy to underestimate",
+        paragraphs: [
+          "Chronic absenteeism — a student missing one or two days a week over months — is genuinely hard to spot from paper registers kept separately by different teachers. A digital system that tracks attendance centrally makes these patterns visible at a glance, often surfacing situations that would otherwise go unnoticed until they become serious.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "what-is-a-school-erp",
     title: "What Is a School ERP? A Complete Guide for Indian Schools",
     description: "A plain-language guide to what School ERP software actually does, why schools adopt one, and what to look for before choosing one — with ShikshaMatrix as a working example.",
