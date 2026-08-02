@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { WebsiteNavbar, WebsiteFooter, Reveal, SectionHeading, APP_LINKS, PrimaryCTA } from "../_components/website-ui";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description: "Common questions about ShikshaMatrix — what it is, how pricing works, how onboarding works, and how your school's data is kept secure.",

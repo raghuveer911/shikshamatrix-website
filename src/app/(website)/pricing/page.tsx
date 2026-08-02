@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { WebsiteNavbar, WebsiteFooter, PrimaryCTA, GhostCTA, Reveal, SectionHeading, APP_LINKS } from "../_components/website-ui";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Pricing",
   description: "ShikshaMatrix pricing plans — Economy, Essential, and Professional. Transparent, per-student pricing for Indian schools of every size.",

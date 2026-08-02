@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { WebsiteNavbar, WebsiteFooter, Reveal, SectionHeading, PrimaryCTA, APP_LINKS } from "../_components/website-ui";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "ShikshaMatrix vs Traditional School Management",
   description: "See how ShikshaMatrix compares to running a school on registers, spreadsheets, and phone calls — and what changes when everything moves to one connected platform.",
