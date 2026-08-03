@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { BLOG_POSTS } from "./(website)/_data/blog-posts";
 import { CASE_STUDIES } from "./(website)/_data/case-studies";
 
-const BASE_URL = "https://shikshamatrix.in";
+const BASE_URL = "https://www.shikshamatrix.in";
 
 // Next.js serves this automatically at /sitemap.xml.
 // Add a new entry here every time a new indexable page ships —

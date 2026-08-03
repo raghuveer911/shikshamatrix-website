@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const BASE_URL = "https://shikshamatrix.in";
+const BASE_URL = "https://www.shikshamatrix.in";
 const SITE_NAME = "ShikshaMatrix";
 const TAGLINE = "The Operating System for Modern Schools";
 const DESCRIPTION =

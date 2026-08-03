@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ShikshaMatrix — The Operating System for Modern Schools",
     description: "Spend less time managing school, more time growing it.",
-    url: "https://shikshamatrix.in",
+    url: "https://www.shikshamatrix.in",
     siteName: "ShikshaMatrix",
     type: "website",
   },

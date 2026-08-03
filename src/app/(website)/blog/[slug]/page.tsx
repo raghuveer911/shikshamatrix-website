@@ -34,9 +34,9 @@ function ArticleStructuredData({ post }: { post: NonNullable<ReturnType<typeof g
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://shikshamatrix.in/" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://shikshamatrix.in/blog" },
-      { "@type": "ListItem", position: 3, name: post.title, item: `https://shikshamatrix.in/blog/${post.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shikshamatrix.in/" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.shikshamatrix.in/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://www.shikshamatrix.in/blog/${post.slug}` },
     ],
   };
   return (

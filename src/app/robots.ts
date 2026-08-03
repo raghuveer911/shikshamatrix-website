@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://shikshamatrix.in";
+const BASE_URL = "https://www.shikshamatrix.in";
 
 // Next.js serves this automatically at /robots.txt.
 //

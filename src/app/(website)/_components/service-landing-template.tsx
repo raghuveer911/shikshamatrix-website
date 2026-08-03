@@ -26,8 +26,8 @@ function BreadcrumbStructuredData({ slug, label }: { slug: string; label: string
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://shikshamatrix.in/" },
-      { "@type": "ListItem", position: 2, name: label, item: `https://shikshamatrix.in/${slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shikshamatrix.in/" },
+      { "@type": "ListItem", position: 2, name: label, item: `https://www.shikshamatrix.in/${slug}` },
     ],
   };
   return (
