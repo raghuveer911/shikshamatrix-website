@@ -14,7 +14,7 @@ import {
   GraduationCap, Award, Sparkles, Quote,
 } from "lucide-react";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.shikshamatrix.in";
 
 // Every image URL here comes from a public-safe upload category
 // (school-website / school-branding) — safe to route through

@@ -7,7 +7,7 @@
 import { useState } from "react";
 import { Reveal, SectionHeading } from "./website-ui";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.shikshamatrix.in";
 
 type FormState = {
   type: "DEMO_REQUEST" | "CONTACT" | "PRICING";
