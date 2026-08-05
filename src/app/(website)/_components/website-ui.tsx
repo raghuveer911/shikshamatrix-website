@@ -8,7 +8,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 
 // Where the nav buttons redirect. Adjust to your live URLs.
-const ADMIN_APP_URL = process.env.NEXT_PUBLIC_ADMIN_APP_URL || "http://localhost:3000";
+const ADMIN_APP_URL = process.env.NEXT_PUBLIC_ADMIN_APP_URL || "https://school.shikshamatrix.in";
 export const APP_LINKS = {
   register: `${ADMIN_APP_URL}/login?view=register`, // school onboarding — same login page, register steps
   login: `${ADMIN_APP_URL}/login`,                   // school admin login
