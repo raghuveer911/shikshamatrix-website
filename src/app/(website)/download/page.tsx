@@ -13,8 +13,8 @@ import { WebsiteNavbar, WebsiteFooter, Reveal, SectionHeading } from "../_compon
 // uploaded asset "shikshamatrix.apk" in every future release and
 // this URL never needs to change.
 const APK_URL = "https://github.com/raghuveer911/shikshamatrix-website/releases/latest/download/shikshamatrix.apk";
-const APK_VERSION = "1.0.0";
-const APK_SIZE = "~124 MB";
+const APK_VERSION = "1.0.7";
+const APK_SIZE = "~129.23 MB";
 
 const AUDIENCES = [
   { icon: "🧑‍🏫", label: "Teachers & Staff", desc: "Attendance, fees, HR, library, inventory & more" },
