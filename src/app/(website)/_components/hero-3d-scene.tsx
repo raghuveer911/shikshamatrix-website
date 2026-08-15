@@ -490,9 +490,16 @@ export default function Hero3DScene() {
     if (href) router.push(href);
   };
 
+  // Lighter pixel ratio + fewer particles on small screens so it stays buttery on phones.
+  const isCompact = typeof window !== "undefined" && window.innerWidth < 640;
+
   return (
     <div className="h-full w-full">
-      <Canvas camera={{ position: [0, 1.3, 8.4], fov: 44 }} dpr={[1, 1.75]} gl={{ antialias: true, alpha: true }}>
+      <Canvas
+        camera={{ position: [0, 1.3, 8.4], fov: 44 }}
+        dpr={isCompact ? [1, 1.5] : [1, 1.75]}
+        gl={{ antialias: true, alpha: true }}
+      >
         <Suspense fallback={null}>
           {/* base lights */}
           <ambientLight intensity={0.25} />
@@ -509,7 +516,7 @@ export default function Hero3DScene() {
             <Lightformer intensity={0.5} color="#312e81" position={[0, -4, 0]} rotation={[Math.PI / 2, 0, 0]} scale={[10, 10, 1]} form="rect" />
           </Environment>
 
-          <Sparkles count={50} scale={8} size={1.7} speed={0.2} color="#a5b4fc" opacity={0.4} />
+          <Sparkles count={isCompact ? 26 : 50} scale={8} size={1.7} speed={0.2} color="#a5b4fc" opacity={0.4} />
           <Ecosystem onOpen={handleOpen} />
 
           {/* game-look post pipeline */}

@@ -9,12 +9,11 @@ const Problem3DScene = dynamic(() => import("./problem-3d-scene"), {
 });
 
 export function ProblemVisual() {
-  const [allow3D, setAllow3D] = useState(false);
+  const [allow3D, setAllow3D] = useState(true);
 
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isSmall = window.innerWidth < 768;
-    setAllow3D(!prefersReduced && !isSmall);
+    setAllow3D(!prefersReduced);
   }, []);
 
   if (!allow3D) {

@@ -633,9 +633,14 @@ function Scene() {
 }
 
 export default function Problem3DScene() {
+  const isCompact = typeof window !== "undefined" && window.innerWidth < 640;
   return (
     <div className="h-full w-full">
-      <Canvas camera={{ position: [0, 1.2, 7.6], fov: 40 }} dpr={[1, 1.75]} gl={{ antialias: true, alpha: true }}>
+      <Canvas
+        camera={{ position: [0, 1.2, isCompact ? 9.2 : 7.6], fov: isCompact ? 46 : 40 }}
+        dpr={isCompact ? [1, 1.5] : [1, 1.75]}
+        gl={{ antialias: true, alpha: true }}
+      >
         <Suspense fallback={null}>
           <Scene />
         </Suspense>

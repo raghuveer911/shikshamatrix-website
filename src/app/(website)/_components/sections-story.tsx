@@ -23,7 +23,7 @@ export function HeroSection() {
         <div>
           <Reveal>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--sm-border)] bg-[var(--sm-primary-soft)] px-4 py-1.5 text-xs font-semibold text-indigo-600">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> The Operating System for Modern Schools
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Trusted by 40+ Schools Across India
             </div>
           </Reveal>
           <Reveal delay={100}>
@@ -60,13 +60,13 @@ export function HeroSection() {
           </Reveal>
         </div>
 
-        {/* Right — floating 3D school ecosystem — clickable, each orbiting module opens its own page */}
+        {/* Right — floating 3D school ecosystem — clickable on every device, each orbiting module opens its own page */}
         <Reveal
           delay={250}
-          className="relative mx-auto mt-4 w-full max-w-[420px] overflow-visible sm:mt-0 sm:max-w-[480px] md:aspect-[6/5] md:max-w-[560px] lg:max-w-[660px] xl:max-w-[760px]"
+          className="relative mx-auto mt-2 aspect-square w-full max-w-[420px] overflow-visible sm:aspect-[6/5] sm:mt-0 sm:max-w-[480px] md:max-w-[560px] lg:max-w-[660px] xl:max-w-[760px]"
         >
           <HeroVisual />
-          <div className="pointer-events-none absolute -bottom-1 left-1/2 hidden -translate-x-1/2 rounded-full border border-[var(--sm-border)] bg-[var(--sm-surface)] px-4 py-1.5 text-[11px] font-semibold text-[var(--sm-muted)] shadow-sm backdrop-blur md:block">
+          <div className="pointer-events-none absolute -bottom-1 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-[var(--sm-border)] bg-[var(--sm-surface)] px-4 py-1.5 text-[11px] font-semibold text-[var(--sm-muted)] shadow-sm backdrop-blur">
             Tap any module to explore it →
           </div>
         </Reveal>
@@ -77,6 +77,41 @@ export function HeroSection() {
 
 // (2D CSS orbit removed — replaced by real 3D scene in hero-3d-scene.tsx,
 // loaded via <HeroVisual/>. The 2D fallback for mobile lives inside hero-visual.tsx.)
+
+// ═════════════════ WHY SHIKSHAMATRIX ══════════════════════════
+const WHY_US = [
+  { title: "Built for Indian schools", desc: "Fee structures, board patterns, and workflows designed around how Indian schools actually run — not a generic global template." },
+  { title: "One team, one number", desc: "No ticket queues bouncing between departments. Your school gets a real point of contact who knows your setup." },
+  { title: "Live in days, not months", desc: "Guided onboarding and data migration get your school running on ShikshaMatrix without disrupting term-time work." },
+  { title: "Every app included", desc: "Admin panel, staff app, student app and parent app — all included from day one, on every plan." },
+];
+
+export function WhyUsSection() {
+  return (
+    <section className="relative py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <SectionHeading
+          eyebrow="Why ShikshaMatrix"
+          title="Built With Schools, Not Just For Them"
+          sub="Every decision in the product comes from watching real school offices — not a features checklist."
+        />
+        <div className="grid gap-6 sm:grid-cols-2">
+          {WHY_US.map((w, i) => (
+            <Reveal key={w.title} delay={i * 90}>
+              <div className="sm-glass sm-glass-hover flex h-full items-start gap-4 rounded-2xl p-6">
+                <span className="mt-0.5 grid h-8 w-8 flex-shrink-0 place-items-center rounded-full bg-emerald-500/15 text-emerald-600">✓</span>
+                <div>
+                  <h3 className="sm-display mb-1.5 text-base font-bold text-[var(--sm-text)]">{w.title}</h3>
+                  <p className="text-sm leading-relaxed text-[var(--sm-muted)]">{w.desc}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 // ═════════════════════ PAIN POINTS ═══════════════════════════
 const PAINS = [
@@ -122,7 +157,7 @@ export function PainPointsSection() {
             </Reveal>
           ))}
         </div>
-        <Reveal delay={300} className="mt-10 aspect-[16/8] w-full overflow-hidden rounded-3xl border border-[var(--sm-border)]">
+        <Reveal delay={300} className="mt-10 aspect-[4/3] w-full overflow-hidden rounded-3xl border border-[var(--sm-border)] sm:aspect-[16/9] lg:aspect-[16/8]">
           <ProblemVisual />
         </Reveal>
         <Reveal delay={350} className="mt-10 text-center">

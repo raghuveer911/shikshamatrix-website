@@ -6,6 +6,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // Where the nav buttons redirect. Adjust to your live URLs.
 const ADMIN_APP_URL = process.env.NEXT_PUBLIC_ADMIN_APP_URL || "https://school.shikshamatrix.in";
@@ -137,6 +138,8 @@ export function WebsiteNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const loginDropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const onHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -176,11 +179,21 @@ export function WebsiteNavbar() {
 
         {/* Desktop links */}
         <div className="hidden items-center gap-7 lg:flex">
-          {NAV_ITEMS.map((n) => (
-            <button key={n.id} onClick={() => scrollToId(n.id)} className="sm-navlink text-sm font-medium text-[var(--sm-muted)] transition-colors hover:text-[var(--sm-text)]">
-              {n.label}
-            </button>
-          ))}
+          {NAV_ITEMS.map((n) =>
+            n.id === "contact" ? (
+              <Link key={n.id} href="/contact" className="sm-navlink text-sm font-medium text-[var(--sm-muted)] transition-colors hover:text-[var(--sm-text)]">
+                {n.label}
+              </Link>
+            ) : onHome ? (
+              <button key={n.id} onClick={() => scrollToId(n.id)} className="sm-navlink text-sm font-medium text-[var(--sm-muted)] transition-colors hover:text-[var(--sm-text)]">
+                {n.label}
+              </button>
+            ) : (
+              <Link key={n.id} href={`/#${n.id}`} className="sm-navlink text-sm font-medium text-[var(--sm-muted)] transition-colors hover:text-[var(--sm-text)]">
+                {n.label}
+              </Link>
+            )
+          )}
         </div>
 
         {/* Desktop actions */}
@@ -221,15 +234,25 @@ export function WebsiteNavbar() {
       {/* Mobile menu sheet */}
       {open && (
         <div className="sm-glass mx-auto mt-2 max-w-6xl rounded-3xl p-4 lg:hidden">
-          {NAV_ITEMS.map((n) => (
-            <button
-              key={n.id}
-              onClick={() => { setOpen(false); scrollToId(n.id); }}
-              className="block w-full rounded-xl px-4 py-3 text-left text-sm font-medium hover:bg-black/[0.04]"
-            >
-              {n.label}
-            </button>
-          ))}
+          {NAV_ITEMS.map((n) =>
+            n.id === "contact" ? (
+              <Link key={n.id} href="/contact" onClick={() => setOpen(false)} className="block w-full rounded-xl px-4 py-3 text-left text-sm font-medium hover:bg-black/[0.04]">
+                {n.label}
+              </Link>
+            ) : onHome ? (
+              <button
+                key={n.id}
+                onClick={() => { setOpen(false); scrollToId(n.id); }}
+                className="block w-full rounded-xl px-4 py-3 text-left text-sm font-medium hover:bg-black/[0.04]"
+              >
+                {n.label}
+              </button>
+            ) : (
+              <Link key={n.id} href={`/#${n.id}`} onClick={() => setOpen(false)} className="block w-full rounded-xl px-4 py-3 text-left text-sm font-medium hover:bg-black/[0.04]">
+                {n.label}
+              </Link>
+            )
+          )}
           <div className="my-2 h-px bg-[var(--sm-border)]" />
           <Link href={APP_LINKS.login} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-black/[0.04]">School Login</Link>
           <Link href={APP_LINKS.download} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-black/[0.04]">
@@ -248,7 +271,19 @@ export function WebsiteNavbar() {
 }
 
 // ── Footer ───────────────────────────────────────────────────
+const FOOTER_PLATFORM_LINKS = [
+  { label: "Admissions", href: "/student-admission-software" },
+  { label: "Attendance", href: "/school-attendance-software" },
+  { label: "Fee Management", href: "/school-fee-management-software" },
+  { label: "Communication", href: "/school-communication-software" },
+  { label: "Transport", href: "/school-transport-management-software" },
+  { label: "Examinations", href: "/online-examination-software" },
+];
+
 export function WebsiteFooter() {
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+
   return (
     <footer className="border-t border-[var(--sm-border)] bg-[var(--sm-bg-2)]/60">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4">
@@ -266,15 +301,19 @@ export function WebsiteFooter() {
         </div>
         <div>
           <div className="mb-3 text-sm font-semibold uppercase tracking-wider text-[var(--sm-muted)]">Platform</div>
-          {["Admissions", "Attendance", "Fee Management", "Communication", "Transport", "Examinations"].map((x) => (
-            <button key={x} onClick={() => scrollToId("platform")} className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">{x}</button>
+          {FOOTER_PLATFORM_LINKS.map((x) => (
+            <Link key={x.label} href={x.href} className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">{x.label}</Link>
           ))}
         </div>
         <div>
           <div className="mb-3 text-sm font-semibold uppercase tracking-wider text-[var(--sm-muted)]">Company</div>
-          <button onClick={() => scrollToId("contact")} className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">Contact Us</button>
-          <button onClick={() => scrollToId("roi")} className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">ROI Calculator</button>
-          <button onClick={() => scrollToId("pricing")} className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">Pricing</button>
+          <Link href="/contact" className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">Contact Us</Link>
+          {onHome ? (
+            <button onClick={() => scrollToId("roi")} className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">ROI Calculator</button>
+          ) : (
+            <Link href="/#roi" className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">ROI Calculator</Link>
+          )}
+          <Link href="/pricing" className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">Pricing</Link>
         </div>
         <div>
           <div className="mb-3 text-sm font-semibold uppercase tracking-wider text-[var(--sm-muted)]">Get Started</div>

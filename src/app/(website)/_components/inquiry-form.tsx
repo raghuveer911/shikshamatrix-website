@@ -1,6 +1,9 @@
 // ─────────────────────────────────────────────────────────────
 // apps/web/src/app/(website)/_components/inquiry-form.tsx
 // Demo / Contact form → POST /api/website/inquiry
+// Reusable in 3 places:
+//   - InquirySection  → full form, used on the homepage (#contact) and /contact
+//   - InquiryCompact  → smaller inline card, drops onto feature/service pages
 // ─────────────────────────────────────────────────────────────
 "use client";
 
@@ -38,7 +41,8 @@ const INITIAL: FormState = {
 const inputCls =
   "w-full rounded-xl border border-[var(--sm-border)] bg-black/[0.025] px-4 py-3 text-sm text-[var(--sm-text)] placeholder-[var(--sm-muted)] outline-none transition-colors focus:border-indigo-400";
 
-export function InquirySection() {
+// Shared form logic + fields — rendered inside either the full section or the compact card.
+function useInquiryForm(source: string) {
   const [form, setForm] = useState<FormState>(INITIAL);
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -47,7 +51,6 @@ export function InquirySection() {
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const submit = async () => {
-    // client-side validation
     if (form.schoolName.trim().length < 3) return fail("Please enter your school name.");
     if (form.contactName.trim().length < 2) return fail("Please enter your name.");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email.trim())) return fail("Please enter a valid email.");
@@ -62,7 +65,7 @@ export function InquirySection() {
         body: JSON.stringify({
           ...form,
           studentCount: form.studentCount ? Number(form.studentCount) : undefined,
-          source: "contact-section",
+          source,
         }),
       });
       const data = await res.json();
@@ -78,17 +81,26 @@ export function InquirySection() {
     setStatus("error");
   }
 
+  return { form, setForm, status, errorMsg, set, submit };
+}
+
+// ── Full form — homepage #contact section + /contact page ─────
+export function InquirySection({ compactHeading = false }: { compactHeading?: boolean }) {
+  const { form, setForm, status, errorMsg, set, submit } = useInquiryForm("contact-section");
+
   return (
     <section id="contact" className="sm-mesh relative py-24">
       <div className="mx-auto max-w-5xl px-6">
-        <SectionHeading
-          eyebrow="Get Started"
-          title="See ShikshaMatrix Running Your School"
-          sub="Book a free 30-minute demo. We'll show you exactly how much time and money your school can save — with your own numbers."
-        />
+        {!compactHeading && (
+          <SectionHeading
+            eyebrow="Get Started"
+            title="See ShikshaMatrix Running Your School"
+            sub="Book a free 30-minute demo. We'll show you exactly how much time and money your school can save — with your own numbers."
+          />
+        )}
 
         <Reveal>
-          <div className="sm-glass rounded-3xl p-8 sm:p-10">
+          <div className="sm-glass mx-auto max-w-3xl rounded-3xl p-6 sm:p-10">
             {status === "done" ? (
               <div className="py-10 text-center">
                 <div className="mx-auto mb-5 grid h-16 w-16 place-items-center rounded-full bg-emerald-500/15 text-3xl">🎉</div>
@@ -100,7 +112,7 @@ export function InquirySection() {
             ) : (
               <div className="grid gap-5">
                 {/* inquiry type */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2.5 sm:gap-3">
                   {([
                     ["DEMO_REQUEST", "📅 Book a Demo"],
                     ["PRICING", "₹ Get Pricing"],
@@ -110,7 +122,7 @@ export function InquirySection() {
                       key={val}
                       type="button"
                       onClick={() => setForm((f) => ({ ...f, type: val }))}
-                      className={`rounded-full px-4 py-2 text-sm font-semibold transition-all ${
+                      className={`rounded-full px-4 py-2 text-xs font-semibold transition-all sm:text-sm ${
                         form.type === val
                           ? "bg-gradient-to-r from-indigo-500 to-violet-500 text-white"
                           : "sm-glass text-[var(--sm-muted)] hover:text-[var(--sm-text)]"
@@ -192,5 +204,55 @@ export function InquirySection() {
         </Reveal>
       </div>
     </section>
+  );
+}
+
+// ── Compact inline card — drop into any feature/service page ──
+// Smaller footprint, fewer fields, same backend — for pages that want
+// a "fill it right here" option instead of just a CTA button.
+export function InquiryCompact({
+  title = "Want to see this for your school?",
+  sub = "Leave your number — we'll call you back with a quick walkthrough.",
+  source = "inline-compact",
+}: {
+  title?: string;
+  sub?: string;
+  source?: string;
+}) {
+  const { form, status, errorMsg, set, submit } = useInquiryForm(source);
+
+  if (status === "done") {
+    return (
+      <div className="sm-glass mx-auto max-w-md rounded-2xl p-6 text-center">
+        <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-full bg-emerald-500/15 text-2xl">🎉</div>
+        <h3 className="sm-display mb-1 text-lg font-bold">Got it!</h3>
+        <p className="text-sm text-[var(--sm-muted)]">We'll call you back within 24 hours.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="sm-glass mx-auto max-w-md rounded-2xl p-5 sm:p-6">
+      <h3 className="sm-display mb-1 text-base font-bold text-[var(--sm-text)]">{title}</h3>
+      <p className="mb-4 text-xs leading-relaxed text-[var(--sm-muted)] sm:text-sm">{sub}</p>
+      <div className="grid gap-3">
+        <input className={inputCls} placeholder="School name *" value={form.schoolName} onChange={set("schoolName")} />
+        <div className="grid grid-cols-2 gap-3">
+          <input className={inputCls} placeholder="Your name *" value={form.contactName} onChange={set("contactName")} />
+          <input className={inputCls} type="tel" placeholder="Phone *" value={form.phone} onChange={set("phone")} />
+        </div>
+        <input className={inputCls} type="email" placeholder="Email *" value={form.email} onChange={set("email")} />
+
+        {status === "error" && <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-xs text-red-600">{errorMsg}</div>}
+
+        <button
+          onClick={submit}
+          disabled={status === "sending"}
+          className="mt-1 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-10px_rgba(99,102,241,.7)] transition-transform hover:scale-[1.02] disabled:opacity-60"
+        >
+          {status === "sending" ? "Sending…" : "Request a Callback"}
+        </button>
+      </div>
+    </div>
   );
 }

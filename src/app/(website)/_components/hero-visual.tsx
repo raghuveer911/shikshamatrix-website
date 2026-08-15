@@ -11,12 +11,13 @@ const Hero3DScene = dynamic(() => import("./hero-3d-scene"), {
 });
 
 export function HeroVisual() {
-  const [allow3D, setAllow3D] = useState(false);
+  const [allow3D, setAllow3D] = useState(true);
 
   useEffect(() => {
+    // Only fall back for accessibility (reduced-motion) — not for screen size.
+    // The scene is lightweight enough to run well on phones too.
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isSmall = window.innerWidth < 768;
-    setAllow3D(!prefersReduced && !isSmall);
+    setAllow3D(!prefersReduced);
   }, []);
 
   if (!allow3D) {
