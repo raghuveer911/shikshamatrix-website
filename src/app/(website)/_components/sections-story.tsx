@@ -18,19 +18,19 @@ export function HeroSection() {
       <div className="sm-float-slow pointer-events-none absolute -left-32 top-24 h-72 w-72 rounded-full bg-indigo-600/20 blur-3xl" />
       <div className="sm-float pointer-events-none absolute -right-24 top-1/2 h-80 w-80 rounded-full bg-violet-600/15 blur-3xl" />
 
-      <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 lg:grid-cols-[1fr_1.18fr] lg:gap-6">
         {/* Left — the pitch */}
         <div>
           <Reveal>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--sm-border)] bg-[var(--sm-primary-soft)] px-4 py-1.5 text-xs font-semibold text-indigo-300">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--sm-border)] bg-[var(--sm-primary-soft)] px-4 py-1.5 text-xs font-semibold text-indigo-600">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> The Operating System for Modern Schools
             </div>
           </Reveal>
           <Reveal delay={100}>
             <h1 className="sm-display text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
-              Spend Less Time <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">Managing</span> School.
+              Spend Less Time <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">Managing</span> School.
               <br />
-              More Time <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Growing</span> It.
+              More Time <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Growing</span> It.
             </h1>
           </Reveal>
           <Reveal delay={200}>
@@ -52,7 +52,7 @@ export function HeroSection() {
                 ["1", "Platform for all"],
               ].map(([num, label]) => (
                 <div key={label}>
-                  <div className="sm-display text-2xl font-bold text-indigo-300">{num}</div>
+                  <div className="sm-display text-2xl font-bold text-indigo-600">{num}</div>
                   <div className="mt-1 text-xs text-[var(--sm-muted)]">{label}</div>
                 </div>
               ))}
@@ -60,9 +60,15 @@ export function HeroSection() {
           </Reveal>
         </div>
 
-        {/* Right — floating 3D school ecosystem */}
-        <Reveal delay={250} className="relative mx-auto mt-4 aspect-square w-full max-w-[380px] sm:mt-0 sm:max-w-[440px] lg:max-w-[560px] xl:max-w-[620px]">
+        {/* Right — floating 3D school ecosystem — clickable, each orbiting module opens its own page */}
+        <Reveal
+          delay={250}
+          className="relative mx-auto mt-4 w-full max-w-[420px] overflow-visible sm:mt-0 sm:max-w-[480px] md:aspect-[6/5] md:max-w-[560px] lg:max-w-[660px] xl:max-w-[760px]"
+        >
           <HeroVisual />
+          <div className="pointer-events-none absolute -bottom-1 left-1/2 hidden -translate-x-1/2 rounded-full border border-[var(--sm-border)] bg-[var(--sm-surface)] px-4 py-1.5 text-[11px] font-semibold text-[var(--sm-muted)] shadow-sm backdrop-blur md:block">
+            Tap any module to explore it →
+          </div>
         </Reveal>
       </div>
     </section>
@@ -120,7 +126,7 @@ export function PainPointsSection() {
           <ProblemVisual />
         </Reveal>
         <Reveal delay={350} className="mt-10 text-center">
-          <div className="sm-display inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-6 py-3 text-sm font-bold text-emerald-300">
+          <div className="sm-display inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-6 py-3 text-sm font-bold text-emerald-600">
             ShikshaMatrix solves all of these — in one place.
           </div>
         </Reveal>
@@ -146,13 +152,13 @@ export function BeforeAfterSection() {
           <Reveal>
             <div className="h-full rounded-3xl border border-red-500/20 bg-red-500/[0.04] p-8">
               <div className="mb-5 flex items-center gap-3">
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-red-500/15 text-red-400">✕</span>
-                <h3 className="sm-display text-lg font-bold text-red-300">Without ShikshaMatrix</h3>
+                <span className="grid h-9 w-9 place-items-center rounded-full bg-red-500/15 text-red-600">✕</span>
+                <h3 className="sm-display text-lg font-bold text-red-600">Without ShikshaMatrix</h3>
               </div>
               <ul className="space-y-3.5">
                 {BEFORE.map((x) => (
                   <li key={x} className="flex items-start gap-3 text-sm text-[var(--sm-muted)]">
-                    <span className="mt-0.5 text-red-400/70">—</span>
+                    <span className="mt-0.5 text-red-500/80">—</span>
                     {x}
                   </li>
                 ))}
@@ -162,13 +168,13 @@ export function BeforeAfterSection() {
           <Reveal delay={150}>
             <div className="h-full rounded-3xl border border-emerald-500/25 bg-emerald-500/[0.05] p-8 shadow-[0_20px_60px_-25px_rgba(34,197,94,.25)]">
               <div className="mb-5 flex items-center gap-3">
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-emerald-500/15 text-emerald-400">✓</span>
-                <h3 className="sm-display text-lg font-bold text-emerald-300">With ShikshaMatrix</h3>
+                <span className="grid h-9 w-9 place-items-center rounded-full bg-emerald-500/15 text-emerald-600">✓</span>
+                <h3 className="sm-display text-lg font-bold text-emerald-600">With ShikshaMatrix</h3>
               </div>
               <ul className="space-y-3.5">
                 {AFTER.map((x) => (
                   <li key={x} className="flex items-start gap-3 text-sm text-[var(--sm-text)]">
-                    <span className="mt-0.5 text-emerald-400">✓</span>
+                    <span className="mt-0.5 text-emerald-600">✓</span>
                     {x}
                   </li>
                 ))}
@@ -209,7 +215,7 @@ export function ROISection() {
             <div className="mb-8">
               <div className="mb-3 flex items-end justify-between">
                 <label className="text-sm font-semibold text-[var(--sm-muted)]">School size</label>
-                <div className="sm-display text-3xl font-bold text-indigo-300">
+                <div className="sm-display text-3xl font-bold text-indigo-600">
                   {students.toLocaleString("en-IN")} <span className="text-base font-medium text-[var(--sm-muted)]">students</span>
                 </div>
               </div>
@@ -231,7 +237,7 @@ export function ROISection() {
 
             <div className="grid gap-6 md:grid-cols-2">
               {/* current cost */}
-              <div className="rounded-2xl border border-[var(--sm-border)] bg-black/20 p-6">
+              <div className="rounded-2xl border border-[var(--sm-border)] bg-black/[0.03] p-6">
                 <div className="mb-4 text-sm font-semibold text-[var(--sm-muted)]">Current monthly staff hours</div>
                 {[
                   ["Attendance & registers", roi.attendance],
@@ -240,27 +246,27 @@ export function ROISection() {
                 ].map(([label, hrs]) => (
                   <div key={label as string} className="mb-3 flex items-center justify-between text-sm">
                     <span className="text-[var(--sm-muted)]">{label}</span>
-                    <span className="font-semibold text-red-300">{hrs} hrs</span>
+                    <span className="font-semibold text-red-600">{hrs} hrs</span>
                   </div>
                 ))}
                 <div className="mt-4 flex items-center justify-between border-t border-[var(--sm-border)] pt-4">
                   <span className="font-semibold">Total</span>
-                  <span className="sm-display text-xl font-bold text-red-300">{roi.manual} hrs/month</span>
+                  <span className="sm-display text-xl font-bold text-red-600">{roi.manual} hrs/month</span>
                 </div>
               </div>
 
               {/* saved */}
               <div className="flex flex-col justify-between rounded-2xl border border-emerald-500/25 bg-emerald-500/[0.06] p-6">
                 <div>
-                  <div className="mb-2 text-sm font-semibold text-emerald-300">With ShikshaMatrix</div>
+                  <div className="mb-2 text-sm font-semibold text-emerald-600">With ShikshaMatrix</div>
                   <div className="sm-display text-lg font-bold">{roi.withSM} hrs/month</div>
                   <p className="mt-2 text-xs leading-relaxed text-[var(--sm-muted)]">
                     Attendance, reminders, reports and records run automatically. Staff only handles exceptions.
                   </p>
                 </div>
                 <div className="mt-6 rounded-2xl bg-emerald-500/15 p-5 text-center">
-                  <div className="sm-display text-4xl font-bold text-emerald-300">{roi.saved}+ hrs</div>
-                  <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-emerald-400/80">Saved every month</div>
+                  <div className="sm-display text-4xl font-bold text-emerald-600">{roi.saved}+ hrs</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-emerald-600/90">Saved every month</div>
                 </div>
               </div>
             </div>

@@ -38,11 +38,11 @@ export default function DownloadPage() {
       <section className="sm-mesh relative px-6 pb-20 pt-36 sm:pt-44">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
-            <div className="mb-6 inline-block rounded-full border border-[var(--sm-border)] bg-[var(--sm-primary-soft)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">
+            <div className="mb-6 inline-block rounded-full border border-[var(--sm-border)] bg-[var(--sm-primary-soft)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">
               Mobile App
             </div>
             <h1 className="sm-display text-4xl font-bold leading-tight text-[var(--sm-text)] sm:text-5xl lg:text-6xl">
-              Get ShikshaMatrix <span className="text-indigo-400">on your phone</span>
+              Get ShikshaMatrix <span className="text-indigo-600">on your phone</span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-[var(--sm-muted)] sm:text-lg">
               For teachers, staff, parents and students. Everything your school needs, in your pocket.
@@ -100,7 +100,7 @@ export default function DownloadPage() {
             {STEPS.map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
                 <div className="sm-glass flex items-start gap-4 rounded-2xl p-5">
-                  <div className="sm-clay flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-bold text-indigo-300">
+                  <div className="sm-clay flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-bold text-indigo-600">
                     {s.n}
                   </div>
                   <div>
@@ -122,7 +122,7 @@ export default function DownloadPage() {
               <p className="text-sm text-[var(--sm-muted)]">
                 Don't have login credentials yet? Your school admin needs to register on ShikshaMatrix
                 and add your account first — ask them, or if you're the school administrator,{" "}
-                <a href="/register-school" className="font-semibold text-indigo-300 hover:text-indigo-200">
+                <a href="/register-school" className="font-semibold text-indigo-600 hover:text-indigo-700">
                   register your school here →
                 </a>
               </p>

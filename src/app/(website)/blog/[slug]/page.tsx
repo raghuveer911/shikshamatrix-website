@@ -60,9 +60,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <main className="sm-mesh min-h-screen pb-24 pt-36 lg:pt-44">
         <article className="mx-auto max-w-2xl px-6">
           <Reveal>
-            <Link href="/blog" className="text-sm font-medium text-indigo-300 hover:text-indigo-200">← Back to Blog</Link>
+            <Link href="/blog" className="text-sm font-medium text-indigo-600 hover:text-indigo-700">← Back to Blog</Link>
             <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider">
-              <span className="rounded-full bg-indigo-500/15 px-2.5 py-1 text-indigo-300">{post.category}</span>
+              <span className="rounded-full bg-indigo-500/15 px-2.5 py-1 text-indigo-600">{post.category}</span>
               <span className="text-[var(--sm-muted)]">
                 {new Date(post.date).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })} · {post.readMinutes} min read
               </span>

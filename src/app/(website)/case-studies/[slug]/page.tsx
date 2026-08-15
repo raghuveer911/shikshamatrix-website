@@ -28,8 +28,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <main className="sm-mesh min-h-screen pb-24 pt-36 lg:pt-44">
         <article className="mx-auto max-w-2xl px-6">
           <Reveal>
-            <Link href="/case-studies" className="text-sm font-medium text-indigo-300 hover:text-indigo-200">← Back to Case Studies</Link>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-indigo-300">{cs.location} · {cs.board} · {cs.studentCount}</p>
+            <Link href="/case-studies" className="text-sm font-medium text-indigo-600 hover:text-indigo-700">← Back to Case Studies</Link>
+            <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-indigo-600">{cs.location} · {cs.board} · {cs.studentCount}</p>
             <h1 className="sm-display mt-2 text-3xl font-bold leading-tight text-[var(--sm-text)] sm:text-4xl">{cs.schoolName}</h1>
             <p className="mt-3 text-base text-[var(--sm-muted)]">{cs.summary}</p>
           </Reveal>
@@ -38,7 +38,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <Reveal delay={80} className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
               {cs.results.map((r) => (
                 <div key={r.label} className="sm-glass rounded-2xl p-5 text-center">
-                  <p className="sm-display text-2xl font-bold text-indigo-300">{r.metric}</p>
+                  <p className="sm-display text-2xl font-bold text-indigo-600">{r.metric}</p>
                   <p className="mt-1 text-xs text-[var(--sm-muted)]">{r.label}</p>
                 </div>
               ))}
@@ -62,7 +62,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           {cs.quote && (
             <Reveal delay={200} className="sm-glass mt-10 rounded-3xl p-8">
               <p className="text-lg italic leading-relaxed text-[var(--sm-text)]">&ldquo;{cs.quote.text}&rdquo;</p>
-              <p className="mt-4 text-sm font-semibold text-indigo-300">{cs.quote.author} · {cs.quote.role}</p>
+              <p className="mt-4 text-sm font-semibold text-indigo-600">{cs.quote.author} · {cs.quote.role}</p>
             </Reveal>
           )}
 

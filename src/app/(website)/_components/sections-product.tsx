@@ -67,11 +67,11 @@ export function FeatureHubsSection() {
                   {h.icon}
                 </div>
                 <h3 className="sm-display relative z-10 mb-1 text-lg font-bold">{h.name}</h3>
-                <p className="relative z-10 mb-4 text-sm font-medium text-indigo-300">{h.result}</p>
+                <p className="relative z-10 mb-4 text-sm font-medium text-indigo-600">{h.result}</p>
                 <ul className="relative z-10 space-y-2">
                   {h.points.map((p) => (
                     <li key={p} className="flex items-start gap-2 text-sm text-[var(--sm-muted)]">
-                      <span className="mt-0.5 text-emerald-400">✔</span>
+                      <span className="mt-0.5 text-emerald-600">✔</span>
                       {p}
                     </li>
                   ))}
@@ -137,11 +137,11 @@ export function OSMapSection() {
                     className="sm-glass w-full rounded-2xl border-[var(--sm-border-hi)] p-4 text-center"
                     style={{ animation: `sm-flowin .5s ease ${i * 120}ms both` }}
                   >
-                    <div className="mb-1 text-xs font-bold uppercase tracking-wider text-indigo-300">Step {i + 1}</div>
+                    <div className="mb-1 text-xs font-bold uppercase tracking-wider text-indigo-600">Step {i + 1}</div>
                     <div className="text-sm font-medium">{step}</div>
                   </div>
                   {i < mod.flow.length - 1 && (
-                    <div className="hidden text-indigo-400/60 lg:block" style={{ animation: `sm-flowin .5s ease ${i * 120 + 60}ms both` }}>→</div>
+                    <div className="hidden text-indigo-500/70 lg:block" style={{ animation: `sm-flowin .5s ease ${i * 120 + 60}ms both` }}>→</div>
                   )}
                 </div>
               ))}
@@ -169,8 +169,8 @@ export function PrincipalDaySection() {
         />
         <div className="grid gap-6 lg:grid-cols-2">
           <Reveal>
-            <div className="h-full rounded-3xl border border-[var(--sm-border)] bg-black/20 p-8">
-              <div className="mb-5 text-sm font-bold uppercase tracking-wider text-red-300">Before</div>
+            <div className="h-full rounded-3xl border border-[var(--sm-border)] bg-black/[0.03] p-8">
+              <div className="mb-5 text-sm font-bold uppercase tracking-wider text-red-600">Before</div>
               <ul className="space-y-4 text-sm text-[var(--sm-muted)]">
                 <li>📞 Calling teachers one by one for attendance status</li>
                 <li>📚 Collecting reports from three different offices</li>
@@ -184,16 +184,16 @@ export function PrincipalDaySection() {
             <div className="relative h-full overflow-hidden rounded-3xl border border-indigo-500/30 bg-[var(--sm-primary-soft)] p-8">
               <div className="sm-pulse absolute -right-10 -top-10 h-40 w-40 rounded-full bg-indigo-500/20 blur-2xl" />
               <div className="relative">
-                <div className="mb-5 text-sm font-bold uppercase tracking-wider text-emerald-300">After</div>
+                <div className="mb-5 text-sm font-bold uppercase tracking-wider text-emerald-600">After</div>
                 <p className="sm-display text-2xl font-bold leading-snug">
                   Everything visible from one dashboard —<br />
-                  <span className="text-indigo-300">before the first bell rings.</span>
+                  <span className="text-indigo-600">before the first bell rings.</span>
                 </p>
                 <ul className="mt-6 space-y-3 text-sm">
-                  <li className="flex gap-2"><span className="text-emerald-400">✓</span> Live attendance across every class</li>
-                  <li className="flex gap-2"><span className="text-emerald-400">✓</span> Today's fee collection, updated in real time</li>
-                  <li className="flex gap-2"><span className="text-emerald-400">✓</span> Staff presence and pending approvals</li>
-                  <li className="flex gap-2"><span className="text-emerald-400">✓</span> Every parent message answered on time</li>
+                  <li className="flex gap-2"><span className="text-emerald-600">✓</span> Live attendance across every class</li>
+                  <li className="flex gap-2"><span className="text-emerald-600">✓</span> Today's fee collection, updated in real time</li>
+                  <li className="flex gap-2"><span className="text-emerald-600">✓</span> Staff presence and pending approvals</li>
+                  <li className="flex gap-2"><span className="text-emerald-600">✓</span> Every parent message answered on time</li>
                 </ul>
               </div>
             </div>
@@ -226,7 +226,7 @@ export function PricingSection() {
                 "Cancel anytime — your data stays yours",
               ].map((x) => (
                 <div key={x} className="flex items-start gap-2 text-sm text-[var(--sm-muted)]">
-                  <span className="mt-0.5 text-emerald-400">✔</span>
+                  <span className="mt-0.5 text-emerald-600">✔</span>
                   {x}
                 </div>
               ))}

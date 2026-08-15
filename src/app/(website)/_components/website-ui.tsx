@@ -45,7 +45,7 @@ export function Reveal({ children, delay = 0, className = "" }: { children: Reac
 export function SectionHeading({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?: string }) {
   return (
     <Reveal className="mx-auto mb-12 max-w-3xl text-center">
-      <div className="mb-3 inline-block rounded-full border border-[var(--sm-border)] bg-[var(--sm-primary-soft)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">
+      <div className="mb-3 inline-block rounded-full border border-[var(--sm-border)] bg-[var(--sm-primary-soft)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">
         {eyebrow}
       </div>
       <h2 className="sm-display text-3xl font-bold leading-tight text-[var(--sm-text)] sm:text-4xl lg:text-[2.6rem]">{title}</h2>
@@ -162,7 +162,7 @@ export function WebsiteNavbar() {
     <header className="fixed inset-x-0 top-4 z-50 px-4">
       <nav
         className={`sm-glass mx-auto flex max-w-6xl items-center justify-between rounded-full px-5 py-3 transition-all duration-300 ${
-          scrolled ? "shadow-[0_14px_45px_-12px_rgba(0,0,0,.6)] border-[var(--sm-border-hi)]" : ""
+          scrolled ? "shadow-[0_14px_45px_-16px_rgba(23,24,45,.25)] border-[var(--sm-border-hi)]" : ""
         }`}
       >
         {/* Brand */}
@@ -170,7 +170,7 @@ export function WebsiteNavbar() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/shikshamatrix.svg" alt="ShikshaMatrix" className="h-9 w-auto" />
           <span className="sm-display text-lg font-bold tracking-tight">
-            Shiksha<span className="text-indigo-400">Matrix</span>
+            Shiksha<span className="text-indigo-600">Matrix</span>
           </span>
         </Link>
 
@@ -189,20 +189,20 @@ export function WebsiteNavbar() {
           <div className="relative" ref={loginDropdownRef}>
             <button
               onClick={() => setLoginOpen((v) => !v)}
-              className="rounded-full px-4 py-2 text-sm font-semibold text-[var(--sm-text)] transition-colors hover:bg-white/5"
+              className="rounded-full px-4 py-2 text-sm font-semibold text-[var(--sm-text)] transition-colors hover:bg-black/[0.04]"
             >
               Login ▾
             </button>
             {loginOpen && (
               <div className="sm-glass absolute right-0 top-12 w-56 rounded-2xl p-2 shadow-2xl">
-                <Link href={APP_LINKS.login} onClick={() => setLoginOpen(false)} className="block rounded-xl px-4 py-2.5 text-sm hover:bg-white/5">
+                <Link href={APP_LINKS.login} onClick={() => setLoginOpen(false)} className="block rounded-xl px-4 py-2.5 text-sm hover:bg-black/[0.04]">
                   School Admin
                 </Link>
-                <Link href={APP_LINKS.download} onClick={() => setLoginOpen(false)} className="block rounded-xl px-4 py-2.5 text-sm hover:bg-white/5">
-                  Teacher / Staff <span className="ml-1 text-[10px] text-indigo-300">Mobile App</span>
+                <Link href={APP_LINKS.download} onClick={() => setLoginOpen(false)} className="block rounded-xl px-4 py-2.5 text-sm hover:bg-black/[0.04]">
+                  Teacher / Staff <span className="ml-1 text-[10px] text-indigo-600">Mobile App</span>
                 </Link>
-                <Link href={APP_LINKS.download} onClick={() => setLoginOpen(false)} className="block rounded-xl px-4 py-2.5 text-sm hover:bg-white/5">
-                  Parent / Student <span className="ml-1 text-[10px] text-indigo-300">Mobile App</span>
+                <Link href={APP_LINKS.download} onClick={() => setLoginOpen(false)} className="block rounded-xl px-4 py-2.5 text-sm hover:bg-black/[0.04]">
+                  Parent / Student <span className="ml-1 text-[10px] text-indigo-600">Mobile App</span>
                 </Link>
               </div>
             )}
@@ -211,7 +211,7 @@ export function WebsiteNavbar() {
         </div>
 
         {/* Mobile hamburger */}
-        <button onClick={() => setOpen((v) => !v)} className="grid h-10 w-10 place-items-center rounded-full hover:bg-white/5 lg:hidden" aria-label="Menu">
+        <button onClick={() => setOpen((v) => !v)} className="grid h-10 w-10 place-items-center rounded-full hover:bg-black/[0.04] lg:hidden" aria-label="Menu">
           <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
             {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
           </svg>
@@ -225,18 +225,18 @@ export function WebsiteNavbar() {
             <button
               key={n.id}
               onClick={() => { setOpen(false); scrollToId(n.id); }}
-              className="block w-full rounded-xl px-4 py-3 text-left text-sm font-medium hover:bg-white/5"
+              className="block w-full rounded-xl px-4 py-3 text-left text-sm font-medium hover:bg-black/[0.04]"
             >
               {n.label}
             </button>
           ))}
           <div className="my-2 h-px bg-[var(--sm-border)]" />
-          <Link href={APP_LINKS.login} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/5">School Login</Link>
-          <Link href={APP_LINKS.download} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/5">
-            Teacher / Staff <span className="ml-1 text-[10px] text-indigo-300">Mobile App</span>
+          <Link href={APP_LINKS.login} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-black/[0.04]">School Login</Link>
+          <Link href={APP_LINKS.download} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-black/[0.04]">
+            Teacher / Staff <span className="ml-1 text-[10px] text-indigo-600">Mobile App</span>
           </Link>
-          <Link href={APP_LINKS.download} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-white/5">
-            Parent / Student <span className="ml-1 text-[10px] text-indigo-300">Mobile App</span>
+          <Link href={APP_LINKS.download} className="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-black/[0.04]">
+            Parent / Student <span className="ml-1 text-[10px] text-indigo-600">Mobile App</span>
           </Link>
           <Link href={APP_LINKS.register} className="mt-2 block rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 px-4 py-3 text-center text-sm font-semibold text-white">
             Register Your School
@@ -257,7 +257,7 @@ export function WebsiteFooter() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/shikshamatrix.svg" alt="ShikshaMatrix" className="h-10 w-auto" />
             <span className="sm-display text-xl font-bold tracking-tight">
-              Shiksha<span className="text-indigo-400">Matrix</span>
+              Shiksha<span className="text-indigo-600">Matrix</span>
             </span>
           </div>
           <p className="text-sm leading-relaxed text-[var(--sm-muted)]">
@@ -278,7 +278,7 @@ export function WebsiteFooter() {
         </div>
         <div>
           <div className="mb-3 text-sm font-semibold uppercase tracking-wider text-[var(--sm-muted)]">Get Started</div>
-          <Link href={APP_LINKS.register} className="block py-1.5 text-sm text-indigo-300 hover:text-indigo-200">Register Your School →</Link>
+          <Link href={APP_LINKS.register} className="block py-1.5 text-sm text-indigo-600 hover:text-indigo-700">Register Your School →</Link>
           <Link href={APP_LINKS.login} className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">School Login</Link>
           <Link href={APP_LINKS.download} className="block py-1.5 text-sm text-[var(--sm-muted)] hover:text-[var(--sm-text)]">Download Mobile App</Link>
         </div>

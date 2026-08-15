@@ -36,12 +36,12 @@ export default function ComparePage() {
               {/* Header row (desktop) */}
               <div className="hidden bg-white/[0.03] p-5 text-xs font-bold uppercase tracking-wider text-[var(--sm-muted)] sm:block">Area</div>
               <div className="hidden bg-white/[0.03] p-5 text-xs font-bold uppercase tracking-wider text-[var(--sm-muted)] sm:block">Traditional / Manual</div>
-              <div className="hidden bg-indigo-500/10 p-5 text-xs font-bold uppercase tracking-wider text-indigo-300 sm:block">With ShikshaMatrix</div>
+              <div className="hidden bg-indigo-500/10 p-5 text-xs font-bold uppercase tracking-wider text-indigo-600 sm:block">With ShikshaMatrix</div>
 
               {ROWS.map((r) => (
                 <div key={r.area} className="contents">
-                  <div className="sm-glass p-5 text-sm font-bold text-[var(--sm-text)] sm:rounded-none sm:border-0 sm:bg-white/[0.02]">{r.area}</div>
-                  <div className="p-5 text-sm text-[var(--sm-muted)] sm:bg-white/[0.02]">{r.old}</div>
+                  <div className="sm-glass p-5 text-sm font-bold text-[var(--sm-text)] sm:rounded-none sm:border-0 sm:bg-black/[0.03]">{r.area}</div>
+                  <div className="p-5 text-sm text-[var(--sm-muted)] sm:bg-black/[0.03]">{r.old}</div>
                   <div className="p-5 text-sm text-[var(--sm-text)] sm:bg-indigo-500/[0.06]">{r.new}</div>
                 </div>
               ))}

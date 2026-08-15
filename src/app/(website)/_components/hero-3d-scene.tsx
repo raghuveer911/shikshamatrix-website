@@ -12,35 +12,14 @@
 "use client";
 
 import { Suspense, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Float, Html, Lightformer, Sparkles, Torus } from "@react-three/drei";
 import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 import * as THREE from "three";
+import { ICON_PATHS, MODULES, MODULE_LINKS } from "./hero-modules";
 
-// ═════════════════ SVG ICONS (label chips) ═════════════════
-const ICON_PATHS: Record<string, string> = {
-  admissions: "M12 3 2 8l10 5 10-5-10-5Zm-6 7.5V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5",
-  attendance: "M4 12.5 9.5 18 20 6.5",
-  fees: "M6 4h12M6 8h12M8 8c6 0 6 4 2 5l6 7",
-  academics: "M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5ZM20 18H6.5",
-  messages: "M21 12a8 8 0 0 1-8 8H4l2-3.2A8 8 0 1 1 21 12Z",
-  transport: "M5 17h14M5 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10M4 11h16",
-  exams: "M8 3h8l4 4v14H4V5a2 2 0 0 1 2-2h2Zm0 9h8M8 16h5",
-  hr: "M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5 9a5 5 0 0 1 10 0M17 8a3 3 0 1 1-2 5.2M15 20a5 5 0 0 1 6-4.9",
-};
-
-const MODULES = [
-  { key: "admissions", label: "Admissions", color: "#818cf8", angle: 0 },
-  { key: "attendance", label: "Attendance", color: "#34d399", angle: 45 },
-  { key: "fees", label: "Fees", color: "#fbbf24", angle: 90 },
-  { key: "academics", label: "Academics", color: "#a78bfa", angle: 135 },
-  { key: "messages", label: "Messages", color: "#38bdf8", angle: 180 },
-  { key: "transport", label: "Transport", color: "#fb923c", angle: 225 },
-  { key: "exams", label: "Exams", color: "#f472b6", angle: 270 },
-  { key: "hr", label: "HR", color: "#4ade80", angle: 315 },
-];
-
-const RADIUS = 3.2;
+const RADIUS = 3.4;
 
 // Dome-tilted orbit: back nodes rise, front nodes dip → nothing hides
 function nodePosition(angle: number): [number, number, number] {
@@ -331,10 +310,10 @@ function SchoolBuilding() {
         <div
           style={{
             padding: "7px 16px", borderRadius: 999, whiteSpace: "nowrap", userSelect: "none",
-            background: "linear-gradient(135deg, rgba(99,102,241,.24), rgba(139,92,246,.14))",
-            border: "1px solid rgba(165,180,252,.4)", backdropFilter: "blur(10px)",
-            color: "#e0e7ff", fontSize: 12.5, fontWeight: 700, letterSpacing: ".02em",
-            boxShadow: "0 8px 30px -8px rgba(99,102,241,.6)",
+            background: "linear-gradient(135deg, rgba(99,102,241,.14), rgba(139,92,246,.1)), rgba(255,255,255,.85)",
+            border: "1px solid rgba(99,102,241,.35)", backdropFilter: "blur(10px)",
+            color: "#4338ca", fontSize: 12.5, fontWeight: 700, letterSpacing: ".02em",
+            boxShadow: "0 8px 24px -10px rgba(99,102,241,.4)",
           }}
         >
           ShikshaMatrix Core
@@ -346,11 +325,12 @@ function SchoolBuilding() {
 
 // ═════════════════ ORBITING MODULE NODE ═════════════════
 function ModuleNode({
-  mod, active, onHover,
+  mod, active, onHover, onOpen,
 }: {
   mod: (typeof MODULES)[number];
   active: boolean;
   onHover: (key: string | null) => void;
+  onOpen: (key: string) => void;
 }) {
   const group = useRef<THREE.Group>(null);
   const targetScale = useRef(new THREE.Vector3(1, 1, 1));
@@ -362,6 +342,11 @@ function ModuleNode({
     group.current.scale.lerp(targetScale.current, 0.11);
   });
 
+  const handleClick = (e: any) => {
+    e.stopPropagation();
+    onOpen(mod.key);
+  };
+
   return (
     <Float speed={1.3} rotationIntensity={0.12} floatIntensity={0.45}>
       <group
@@ -369,33 +354,41 @@ function ModuleNode({
         position={[x, y, z]}
         onPointerOver={(e) => { e.stopPropagation(); onHover(mod.key); document.body.style.cursor = "pointer"; }}
         onPointerOut={(e) => { e.stopPropagation(); onHover(null); document.body.style.cursor = "auto"; }}
+        onClick={handleClick}
       >
         <MiniModel mod={mod} active={active} />
         {active && <pointLight color={mod.color} intensity={3} distance={2.2} />}
 
         <Html center position={[0, 0.78, 0]} distanceFactor={8.5} zIndexRange={[60, 0]}>
           <div
+            role="button"
+            tabIndex={0}
+            onClick={handleClick}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onOpen(mod.key); } }}
+            onPointerEnter={() => onHover(mod.key)}
+            onPointerLeave={() => onHover(null)}
             style={{
-              display: "flex", alignItems: "center", gap: 8,
+              display: "flex", alignItems: "center", gap: 8, cursor: "pointer",
               padding: "6px 12px 6px 7px", borderRadius: 999, whiteSpace: "nowrap", userSelect: "none",
               background: active
-                ? `linear-gradient(135deg, ${mod.color}2e, rgba(10,12,26,.88))`
-                : "rgba(10,12,26,.8)",
-              border: `1px solid ${active ? mod.color : "rgba(255,255,255,.14)"}`,
+                ? `linear-gradient(135deg, ${mod.color}2e, rgba(15,17,35,.9))`
+                : "rgba(15,17,35,.82)",
+              border: `1px solid ${active ? mod.color : "rgba(255,255,255,.16)"}`,
               backdropFilter: "blur(10px)",
-              color: "#f1f5f9", fontSize: 12, fontWeight: 650,
-              boxShadow: active ? `0 6px 26px -6px ${mod.color}` : "0 4px 14px -6px rgba(0,0,0,.6)",
-              transition: "background .25s ease, border-color .25s ease, box-shadow .25s ease",
+              color: "#f8fafc", fontSize: 12, fontWeight: 650,
+              boxShadow: active ? `0 8px 28px -6px ${mod.color}` : "0 4px 16px -6px rgba(15,17,35,.45)",
+              transition: "background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .2s ease",
+              transform: active ? "translateY(-1px)" : "none",
             }}
           >
             <span
               style={{
                 display: "grid", placeItems: "center", width: 22, height: 22, borderRadius: 7,
-                background: `linear-gradient(135deg, ${mod.color}33, ${mod.color}18)`,
-                border: `1px solid ${mod.color}55`, flexShrink: 0,
+                background: `linear-gradient(135deg, ${mod.color}55, ${mod.color}30)`,
+                border: `1px solid ${mod.color}80`, flexShrink: 0,
               }}
             >
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke={mod.color} strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d={ICON_PATHS[mod.key]} />
               </svg>
             </span>
@@ -460,7 +453,7 @@ function OrbitPath() {
 }
 
 // ═════════════════ ECOSYSTEM ═════════════════
-function Ecosystem() {
+function Ecosystem({ onOpen }: { onOpen: (key: string) => void }) {
   const orbit = useRef<THREE.Group>(null);
   const world = useRef<THREE.Group>(null);
   const [activeKey, setActiveKey] = useState<string | null>(null);
@@ -482,7 +475,7 @@ function Ecosystem() {
         <OrbitPath />
         <ConnectorLines activeKey={activeKey} />
         {MODULES.map((mod) => (
-          <ModuleNode key={mod.key} mod={mod} active={activeKey === mod.key} onHover={setActiveKey} />
+          <ModuleNode key={mod.key} mod={mod} active={activeKey === mod.key} onHover={setActiveKey} onOpen={onOpen} />
         ))}
       </group>
     </group>
@@ -491,9 +484,15 @@ function Ecosystem() {
 
 // ═════════════════ CANVAS + PIPELINE ═════════════════
 export default function Hero3DScene() {
+  const router = useRouter();
+  const handleOpen = (key: string) => {
+    const href = MODULE_LINKS[key];
+    if (href) router.push(href);
+  };
+
   return (
     <div className="h-full w-full">
-      <Canvas camera={{ position: [0, 1.35, 7.8], fov: 40 }} dpr={[1, 1.75]} gl={{ antialias: true, alpha: true }}>
+      <Canvas camera={{ position: [0, 1.3, 8.4], fov: 44 }} dpr={[1, 1.75]} gl={{ antialias: true, alpha: true }}>
         <Suspense fallback={null}>
           {/* base lights */}
           <ambientLight intensity={0.25} />
@@ -511,7 +510,7 @@ export default function Hero3DScene() {
           </Environment>
 
           <Sparkles count={50} scale={8} size={1.7} speed={0.2} color="#a5b4fc" opacity={0.4} />
-          <Ecosystem />
+          <Ecosystem onOpen={handleOpen} />
 
           {/* game-look post pipeline */}
           <EffectComposer>

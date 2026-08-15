@@ -34,7 +34,7 @@ export default function CaseStudiesIndexPage() {
               {CASE_STUDIES.map((cs, i) => (
                 <Reveal key={cs.slug} delay={i * 60}>
                   <Link href={`/case-studies/${cs.slug}`} className="sm-glass sm-glass-hover block h-full rounded-2xl p-6">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-indigo-300">{cs.location} · {cs.board}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-indigo-600">{cs.location} · {cs.board}</p>
                     <h2 className="sm-display mt-2 text-lg font-bold text-[var(--sm-text)]">{cs.schoolName}</h2>
                     <p className="mt-2 text-sm leading-relaxed text-[var(--sm-muted)]">{cs.summary}</p>
                   </Link>

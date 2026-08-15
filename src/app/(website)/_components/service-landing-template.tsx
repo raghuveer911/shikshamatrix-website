@@ -70,7 +70,7 @@ export function ServiceLandingPage({ data }: { data: ServiceLandingData }) {
         {/* Hero */}
         <div className="mx-auto max-w-4xl px-6 text-center">
           <Reveal>
-            <div className="mb-5 inline-block rounded-full border border-[var(--sm-border)] bg-[var(--sm-primary-soft)] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">
+            <div className="mb-5 inline-block rounded-full border border-[var(--sm-border)] bg-[var(--sm-primary-soft)] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">
               {eyebrow}
             </div>
             <h1 className="sm-display text-3xl font-bold leading-tight text-[var(--sm-text)] sm:text-5xl">{h1}</h1>
@@ -119,7 +119,7 @@ export function ServiceLandingPage({ data }: { data: ServiceLandingData }) {
             <ul className="space-y-3">
               {benefits.map((b) => (
                 <li key={b} className="flex items-start gap-2.5 text-sm text-[var(--sm-muted)]">
-                  <span className="mt-0.5 text-emerald-400">✓</span>
+                  <span className="mt-0.5 text-emerald-600">✓</span>
                   <span>{b}</span>
                 </li>
               ))}
@@ -148,7 +148,7 @@ export function ServiceLandingPage({ data }: { data: ServiceLandingData }) {
             <p className="mb-4 text-sm text-[var(--sm-muted)]">Related:</p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {relatedPages.map((r) => (
-                <Link key={r.href} href={r.href} className="sm-glass sm-glass-hover rounded-full px-4 py-2 text-sm font-medium text-indigo-300">
+                <Link key={r.href} href={r.href} className="sm-glass sm-glass-hover rounded-full px-4 py-2 text-sm font-medium text-indigo-600">
                   {r.label}
                 </Link>
               ))}

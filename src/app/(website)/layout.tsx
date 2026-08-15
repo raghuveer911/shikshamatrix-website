@@ -29,33 +29,33 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
       {/* Scoped base styles so the marketing site never leaks into admin panel CSS */}
       <style>{`
         .sm-website {
-          --sm-bg: #070b1a;
-          --sm-bg-2: #0b1226;
-          --sm-surface: rgba(255, 255, 255, 0.04);
-          --sm-border: rgba(255, 255, 255, 0.09);
-          --sm-border-hi: rgba(129, 140, 248, 0.35);
-          --sm-text: #e7eaf6;
-          --sm-muted: #8b93b0;
+          --sm-bg: #fbfbfe;
+          --sm-bg-2: #f3f4fb;
+          --sm-surface: rgba(255, 255, 255, 0.72);
+          --sm-border: rgba(23, 24, 45, 0.09);
+          --sm-border-hi: rgba(99, 102, 241, 0.45);
+          --sm-text: #171833;
+          --sm-muted: #666b85;
           --sm-primary: #6366f1;
-          --sm-primary-soft: rgba(99, 102, 241, 0.14);
-          --sm-success: #22c55e;
-          --sm-danger: #ef4444;
-          --sm-warning: #f59e0b;
+          --sm-primary-soft: rgba(99, 102, 241, 0.09);
+          --sm-success: #16a34a;
+          --sm-danger: #dc2626;
+          --sm-warning: #d97706;
           font-family: var(--font-inter), system-ui, sans-serif;
           background: var(--sm-bg);
           color: var(--sm-text);
           min-height: 100vh;
           -webkit-font-smoothing: antialiased;
         }
-        .sm-website ::selection { background: rgba(99,102,241,.4); }
+        .sm-website ::selection { background: rgba(99,102,241,.18); }
         .sm-display { font-family: var(--font-grotesk), var(--font-inter), sans-serif; letter-spacing: -0.02em; }
 
         /* mesh gradient + particle backdrop */
         .sm-mesh {
           background:
-            radial-gradient(50rem 30rem at 15% -5%, rgba(99,102,241,.22), transparent 60%),
-            radial-gradient(44rem 28rem at 90% 10%, rgba(168,85,247,.14), transparent 60%),
-            radial-gradient(40rem 30rem at 50% 110%, rgba(56,102,241,.12), transparent 60%),
+            radial-gradient(50rem 30rem at 15% -5%, rgba(99,102,241,.10), transparent 60%),
+            radial-gradient(44rem 28rem at 90% 10%, rgba(168,85,247,.08), transparent 60%),
+            radial-gradient(40rem 30rem at 50% 110%, rgba(56,102,241,.06), transparent 60%),
             var(--sm-bg);
         }
         .sm-glass {
@@ -63,6 +63,7 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
           border: 1px solid var(--sm-border);
           backdrop-filter: blur(14px);
           -webkit-backdrop-filter: blur(14px);
+          box-shadow: 0 1px 2px rgba(23,24,45,.03), 0 14px 40px -20px rgba(23,24,45,.18);
         }
         .sm-glass-hover { transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease; }
         .sm-glass-hover:hover {
@@ -128,27 +129,27 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
 
         /* ── Clay-morphism accent — use ONLY for small icon badges, never full cards ── */
         .sm-clay {
-          background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
+          background: linear-gradient(145deg, #ffffff, #f2f3fa);
           box-shadow:
-            5px 5px 12px rgba(0,0,0,.45),
-            -3px -3px 10px rgba(255,255,255,.04),
-            inset 1px 1px 1px rgba(255,255,255,.06);
-          border: 1px solid rgba(255,255,255,.06);
+            5px 5px 12px rgba(23,24,45,.08),
+            -4px -4px 10px rgba(255,255,255,.9),
+            inset 1px 1px 1px rgba(255,255,255,.6);
+          border: 1px solid rgba(23,24,45,.05);
         }
         .sm-clay-hover { transition: box-shadow .3s ease, transform .3s ease; }
         .sm-clay-hover:hover {
           transform: translateY(-2px);
           box-shadow:
-            7px 7px 16px rgba(0,0,0,.5),
-            -4px -4px 12px rgba(255,255,255,.05),
-            inset 1px 1px 1px rgba(255,255,255,.08);
+            7px 7px 16px rgba(23,24,45,.1),
+            -5px -5px 12px rgba(255,255,255,.95),
+            inset 1px 1px 1px rgba(255,255,255,.7);
         }
 
         /* ── Liquid glass card sheen — subtle moving reflection on hover ── */
         .sm-card-liquid { isolation: isolate; }
         .sm-card-sheen {
           position: absolute; top: -50%; left: -60%; width: 60%; height: 200%;
-          background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.06) 50%, transparent 70%);
+          background: linear-gradient(115deg, transparent 30%, rgba(99,102,241,.06) 50%, transparent 70%);
           transform: rotate(12deg) translateX(-40%);
           transition: transform .9s ease;
           pointer-events: none; z-index: 1;

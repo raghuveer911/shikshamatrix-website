@@ -24,7 +24,7 @@ export default function BlogIndexPage() {
               <Reveal key={post.slug} delay={i * 60}>
                 <Link href={`/blog/${post.slug}`} className="sm-glass sm-glass-hover block rounded-2xl p-6">
                   <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider">
-                    <span className="rounded-full bg-indigo-500/15 px-2.5 py-1 text-indigo-300">{post.category}</span>
+                    <span className="rounded-full bg-indigo-500/15 px-2.5 py-1 text-indigo-600">{post.category}</span>
                     <span className="text-[var(--sm-muted)]">
                       {new Date(post.date).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })} · {post.readMinutes} min read
                     </span>

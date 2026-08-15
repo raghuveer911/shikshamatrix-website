@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const Problem3DScene = dynamic(() => import("./problem-3d-scene"), {
   ssr: false,
-  loading: () => <div className="h-full w-full animate-pulse rounded-3xl bg-white/[0.02]" />,
+  loading: () => <div className="h-full w-full animate-pulse rounded-3xl bg-black/[0.03]" />,
 });
 
 export function ProblemVisual() {

@@ -93,11 +93,11 @@ export default function PricingPage() {
                     <span className="sm-display text-4xl font-bold text-[var(--sm-text)]">{plan.price}</span>
                     <span className="text-sm text-[var(--sm-muted)]">{plan.unit}</span>
                   </div>
-                  <p className="mt-1 text-xs font-semibold text-indigo-300">{plan.students}</p>
+                  <p className="mt-1 text-xs font-semibold text-indigo-600">{plan.students}</p>
                   <ul className="mt-6 flex-1 space-y-3">
                     {plan.features.map((f) => (
                       <li key={f} className="flex items-start gap-2 text-sm text-[var(--sm-muted)]">
-                        <span className="mt-0.5 text-emerald-400">✓</span>
+                        <span className="mt-0.5 text-emerald-600">✓</span>
                         <span>{f}</span>
                       </li>
                     ))}
@@ -117,7 +117,7 @@ export default function PricingPage() {
           <Reveal delay={300} className="mx-auto mt-14 max-w-2xl text-center">
             <p className="text-sm text-[var(--sm-muted)]">
               Need a plan for more than 1,000 students, or have a specific requirement? {" "}
-              <Link href={APP_LINKS.register} className="font-semibold text-indigo-300 hover:text-indigo-200">
+              <Link href={APP_LINKS.register} className="font-semibold text-indigo-600 hover:text-indigo-700">
                 Talk to us
               </Link>{" "}
               — we'll work out something that fits.

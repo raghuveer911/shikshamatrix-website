@@ -36,7 +36,7 @@ const INITIAL: FormState = {
 };
 
 const inputCls =
-  "w-full rounded-xl border border-[var(--sm-border)] bg-black/25 px-4 py-3 text-sm text-[var(--sm-text)] placeholder-[var(--sm-muted)] outline-none transition-colors focus:border-indigo-400";
+  "w-full rounded-xl border border-[var(--sm-border)] bg-black/[0.025] px-4 py-3 text-sm text-[var(--sm-text)] placeholder-[var(--sm-muted)] outline-none transition-colors focus:border-indigo-400";
 
 export function InquirySection() {
   const [form, setForm] = useState<FormState>(INITIAL);
@@ -175,7 +175,7 @@ export function InquirySection() {
                 />
 
                 {status === "error" && (
-                  <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">{errorMsg}</div>
+                  <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-600">{errorMsg}</div>
                 )}
 
                 <button
