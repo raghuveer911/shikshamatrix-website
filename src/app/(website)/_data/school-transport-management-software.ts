@@ -35,7 +35,7 @@ export const schoolTransportManagementSoftwareData: ServiceLandingData = {
       "title": "Route Management",
       "desc": "Set up bus routes and stops for the school.",
       "slug": "route-management",
-      "image": "/features/transport/route-management.jpg",
+      "image": "/features/transport/route-management.png",
       "bullets": [
         "Set up bus routes and stops for the school.",
         "Transport assignments live in the same system as the rest of a student's record, not a separate spreadsheet",
@@ -46,7 +46,7 @@ export const schoolTransportManagementSoftwareData: ServiceLandingData = {
       "title": "Vehicle & Driver Records",
       "desc": "Track vehicle details and driver assignments in the system.",
       "slug": "vehicle-and-driver-records",
-      "image": "/features/transport/vehicle-and-driver-records.jpg",
+      "image": "/features/transport/vehicle-and-driver-records.png",
       "bullets": [
         "Track vehicle details and driver assignments in the system.",
         "Front-office staff can look up a student's route without cross-referencing multiple files",
@@ -57,7 +57,7 @@ export const schoolTransportManagementSoftwareData: ServiceLandingData = {
       "title": "Student Transport Assignment",
       "desc": "Assign students to routes, connected directly to their student record.",
       "slug": "student-transport-assignment",
-      "image": "/features/transport/student-transport-assignment.jpg",
+      "image": "/features/transport/student-transport-assignment.png",
       "bullets": [
         "Assign students to routes, connected directly to their student record.",
         "Transport fees connect directly to the same fee collection and receipt system as everything else",
@@ -68,7 +68,7 @@ export const schoolTransportManagementSoftwareData: ServiceLandingData = {
       "title": "Fee Integration",
       "desc": "Transport charges can be included as part of a student's fee structure.",
       "slug": "fee-integration",
-      "image": "/features/transport/fee-integration.jpg",
+      "image": "/features/transport/fee-integration.png",
       "bullets": [
         "Transport charges can be included as part of a student's fee structure.",
         "Transport assignments live in the same system as the rest of a student's record, not a separate spreadsheet",

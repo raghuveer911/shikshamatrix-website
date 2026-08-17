@@ -16,7 +16,7 @@ export const hostelData: ServiceLandingData = {
   h1: "Hostel Records, Connected to the Rest of the School",
   subhead:
     "Hostel allocation and resident records are often kept entirely separately from a school's main student data. ShikshaMatrix keeps hostel management connected to the same student and fee records as everything else.",
-  heroImage: "/features/hostel/hero.jpg",
+  heroImage: "/features/hostel/hero.png",
   problems: [
     { title: "Room allocation tracked separately", desc: "Hostel warden records often live apart from the school's main student database." },
     { title: "Hostel fees managed outside the main ledger", desc: "Hostel charges tracked separately make it harder to see a student's complete fee picture." },
@@ -27,7 +27,7 @@ export const hostelData: ServiceLandingData = {
       title: "Room & Bed Allocation",
       desc: "Assign hostel rooms and beds to students, tracked against their main student record.",
       slug: "room-bed-allocation",
-      image: "/features/hostel/room-bed-allocation.jpg",
+      image: "/features/hostel/room-bed-allocation.png",
       bullets: [
         "Assign or reassign a bed to any student in a few taps",
         "See room-wise and floor-wise occupancy at a glance",
@@ -39,7 +39,7 @@ export const hostelData: ServiceLandingData = {
       title: "Resident Records",
       desc: "Hostel-specific details connected to the same student profile used across the platform.",
       slug: "resident-records",
-      image: "/features/hostel/resident-records.jpg",
+      image: "/features/hostel/resident-records.png",
       bullets: [
         "Guardian contacts, medical notes, and check-in/out history in one place",
         "Warden can pull up a resident's full profile instantly",
@@ -51,7 +51,7 @@ export const hostelData: ServiceLandingData = {
       title: "Hostel Fee Integration",
       desc: "Hostel charges can be included in a student's overall fee structure.",
       slug: "hostel-fee-integration",
-      image: "/features/hostel/hostel-fee-integration.jpg",
+      image: "/features/hostel/hostel-fee-integration.png",
       bullets: [
         "Hostel fees appear alongside tuition and other charges — one bill, not three",
         "Same reminders, receipts, and payment tracking as the rest of fee collection",
