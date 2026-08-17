@@ -4,8 +4,8 @@ import Link from "next/link";
 import { APP_LINKS } from "./website-ui";
 
 // TODO(Raghuveer): replace with your real WhatsApp business number and phone number.
-const WHATSAPP_NUMBER = "910000000000"; // digits only, country code first, no '+'
-const PHONE_NUMBER = "+910000000000";
+const WHATSAPP_NUMBER = "+917877832549"; // digits only, country code first, no '+'
+const PHONE_NUMBER = "+917877832549";
 
 const ACTIONS = [
   {
@@ -37,7 +37,7 @@ const ACTIONS = [
   },
   {
     label: "Email",
-    href: "mailto:hello@shikshamatrix.in",
+    href: "mailto:info@shikshamatrix.in",
     bg: "bg-rose-500 hover:bg-rose-600",
     external: false,
     icon: (

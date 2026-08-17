@@ -73,7 +73,7 @@ export function SchoolsShowcaseSection() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Real Schools, Real Results"
-          title={`${PARTNER_SCHOOLS.length}+ Schools Run on ShikshaMatrix`}
+          title={`30+ Schools Run on ShikshaMatrix`}
           sub="From single campuses to multi-branch groups — here's a few of the schools already saving hours every week."
         />
       </div>

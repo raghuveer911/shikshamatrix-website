@@ -19,12 +19,12 @@ export interface PartnerSchool {
 // Keep ~40 entries for a full showcase grid, or trim the array —
 // the section lays out cleanly with anywhere from 8 to 48 entries.
 export const PARTNER_SCHOOLS: PartnerSchool[] = [
-  { id: "school-01", name: "School Name 1", city: "City, State" },
-  { id: "school-02", name: "School Name 2", city: "City, State" },
-  { id: "school-03", name: "School Name 3", city: "City, State" },
-  { id: "school-04", name: "School Name 4", city: "City, State" },
-  { id: "school-05", name: "School Name 5", city: "City, State" },
-  { id: "school-06", name: "School Name 6", city: "City, State" },
-  { id: "school-07", name: "School Name 7", city: "City, State" },
-  { id: "school-08", name: "School Name 8", city: "City, State" },
+  { id: "school-01", name: "R.K International School", city: "Sojat, Rajasthan" },
+  { id: "school-02", name: "Siddharth Public School", city: "Sojat, Rajasthan" },
+  { id: "school-03", name: "Yash Shiksha Sansthan Senior Sec School", city: "Pali, Rajasthan" },
+  { id: "school-04", name: "Humming Birds International School", city: "Kuchaman, Rajasthan" },
+  { id: "school-05", name: "R.N Childran School", city: "Nagore, Rajasthan" },
+  { id: "school-06", name: "Saraswati Children School", city: "Sangariya Phanta, Rajasthan" },
+  { id: "school-07", name: "Gramodaya Public School", city: "Bilara, Rajasthan" },
+  { id: "school-08", name: "KMMP Sr. Sec. Public School", city: "Dangiyawas, Rajasthan" },
 ];
