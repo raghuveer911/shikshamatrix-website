@@ -105,5 +105,5 @@ export const schoolTransportManagementSoftwareData: ServiceLandingData = {
       "href": "/pricing"
     }
   ],
-  "heroImage": "/features/transport/hero.jpg"
+  "heroImage": "/features/transport/hero.png"
 };
