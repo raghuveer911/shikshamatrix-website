@@ -5,7 +5,7 @@
 // ─────────────────────────────────────────────────────────────
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
-import { FloatingContactBar, FloatingContactMobile } from "./_components/floating-contact";
+import { SiteFloatingContact } from "./_components/floating-contact";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const grotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-grotesk", display: "swap" });
@@ -164,8 +164,7 @@ export default function WebsiteLayout({ children }: { children: React.ReactNode 
         }
       `}</style>
       {children}
-      <FloatingContactBar />
-      <FloatingContactMobile />
+      <SiteFloatingContact />
     </div>
   );
 }

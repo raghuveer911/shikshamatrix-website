@@ -13,6 +13,7 @@ import {
   Dumbbell, Microscope, Music, Palette, ShieldCheck, Library, Monitor,
   GraduationCap, Award, Sparkles, Quote,
 } from "lucide-react";
+import { SchoolFloatingContact } from "../../_components/floating-contact";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.shikshamatrix.in";
 
@@ -513,6 +514,7 @@ export default function SchoolWebsitePage() {
       <footer className="border-t border-gray-100 py-8 text-center text-xs text-gray-400 px-5">
         © {new Date().getFullYear()} {school.name} · Powered by ShikshaMatrix
       </footer>
+      <SchoolFloatingContact phone={config.admissionsPhone || school.phone} email={config.admissionsEmail || school.email} />
     </main>
   );
 }
