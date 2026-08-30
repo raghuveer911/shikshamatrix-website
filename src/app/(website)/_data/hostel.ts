@@ -27,7 +27,7 @@ export const hostelData: ServiceLandingData = {
       title: "Room & Bed Allocation",
       desc: "Assign hostel rooms and beds to students, tracked against their main student record.",
       slug: "room-bed-allocation",
-      image: "/features/hostel/room-bed-allocation.jpg",
+      image: "/features/hostel/room-bed-allocation.png",
       bullets: [
         "Assign or reassign a bed to any student in a few taps",
         "See room-wise and floor-wise occupancy at a glance",
@@ -39,7 +39,7 @@ export const hostelData: ServiceLandingData = {
       title: "Resident Records",
       desc: "Hostel-specific details connected to the same student profile used across the platform.",
       slug: "resident-records",
-      image: "/features/hostel/resident-records.jpg",
+      image: "/features/hostel/resident-records.png",
       bullets: [
         "Guardian contacts, medical notes, and check-in/out history in one place",
         "Warden can pull up a resident's full profile instantly",
