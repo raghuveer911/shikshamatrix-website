@@ -5,7 +5,7 @@
 // ─────────────────────────────────────────────────────────────
 
 export const ICON_PATHS: Record<string, string> = {
-  admissions: "M12 3 2 8l10 5 10-5-10-5Zm-6 7.5V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5",
+  hostel: "M3 21h18M5 21V7l7-4 7 4v14M9 9v.01M9 13v.01M9 17v.01M15 9v.01M15 13v.01M15 17v.01",
   attendance: "M4 12.5 9.5 18 20 6.5",
   fees: "M6 4h12M6 8h12M8 8c6 0 6 4 2 5l6 7",
   academics: "M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5ZM20 18H6.5",
@@ -17,7 +17,7 @@ export const ICON_PATHS: Record<string, string> = {
 
 // Where each floating module should take the visitor when clicked/tapped.
 export const MODULE_LINKS: Record<string, string> = {
-  admissions: "/student-admission-software",
+  hostel: "/school-hostel-management-software",
   attendance: "/school-attendance-software",
   fees: "/school-fee-management-software",
   academics: "/school-report-card-software",
@@ -28,7 +28,7 @@ export const MODULE_LINKS: Record<string, string> = {
 };
 
 export const MODULES = [
-  { key: "admissions", label: "Admissions", color: "#6366f1", angle: 0 },
+  { key: "hostel", label: "Hostel", color: "#6366f1", angle: 0 },
   { key: "attendance", label: "Attendance", color: "#059669", angle: 45 },
   { key: "fees", label: "Fees", color: "#d97706", angle: 90 },
   { key: "academics", label: "Academics", color: "#7c3aed", angle: 135 },

@@ -149,7 +149,7 @@ function MiniModel({ mod, active }: { mod: (typeof MODULES)[number]; active: boo
         </group>
       )}
 
-      {mod.key === "admissions" && (
+      {mod.key === "hostel" && (
         <group rotation={[-0.15, 0.2, 0]}>
           <mesh position={[0, -0.02, 0]}>
             <boxGeometry args={[0.4, 0.28, 0.05]} />

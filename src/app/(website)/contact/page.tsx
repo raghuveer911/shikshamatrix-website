@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 const DIRECT = [
-  { label: "Call Us", value: "+91 00000 00000", href: "tel:+917877832549", icon: "📞" },
+  { label: "Call Us", value: "+91 7877832549", href: "tel:+917877832549", icon: "📞" },
   { label: "WhatsApp", value: "Chat with our team", href: "https://wa.me/917877832549", icon: "💬" },
-  { label: "Email", value: "hello@shikshamatrix.in", href: "mailto:info@shikshamatrix.in", icon: "✉️" },
+  { label: "Email", value: "info@shikshamatrix.in", href: "mailto:info@shikshamatrix.in", icon: "✉️" },
 ];
 
 export default function ContactPage() {

@@ -13,7 +13,6 @@ import { TractionSection } from "./_components/sections-traction";
 import { TwoVerticalsSection } from "./_components/sections-two-verticals";
 import { WhyNowSection } from "./_components/sections-why-now";
 import { TrustSection } from "./_components/sections-trust";
-import { MarketSection } from "./_components/sections-market";
 import { CompetitionSection } from "./_components/sections-competition";
 import { MoatSection } from "./_components/sections-moat";
 import { RoadmapSection } from "./_components/sections-roadmap";
@@ -59,9 +58,6 @@ export default function WebsiteHomePage() {
 
       {/* 6.6. Trust — security + payment reconciliation, grounded in the real architecture */}
       <TrustSection />
-
-      {/* 6.7. Market — real, cited public data (UDISE+), not an invented TAM */}
-      <MarketSection />
 
       {/* 6.8. Competition — category comparison, no named competitors */}
       <CompetitionSection />
