@@ -21,6 +21,8 @@ type FormState = {
   phone: string;
   city: string;
   studentCount: string;
+  staffCount: string;
+  currentSoftware: string;
   message: string;
   website: string; // honeypot — hidden from humans
 };
@@ -34,6 +36,8 @@ const INITIAL: FormState = {
   phone: "",
   city: "",
   studentCount: "",
+  staffCount: "",
+  currentSoftware: "",
   message: "",
   website: "",
 };
@@ -158,6 +162,10 @@ export function InquirySection({ compactHeading = false }: { compactHeading?: bo
                     <input className={inputCls} type="number" min={0} placeholder="e.g. 500" value={form.studentCount} onChange={set("studentCount")} />
                   </div>
                   <div>
+                    <label className="mb-1.5 block text-xs font-semibold text-[var(--sm-muted)]">Number of staff</label>
+                    <input className={inputCls} type="number" min={0} placeholder="e.g. 40" value={form.staffCount} onChange={set("staffCount")} />
+                  </div>
+                  <div>
                     <label className="mb-1.5 block text-xs font-semibold text-[var(--sm-muted)]">Email *</label>
                     <input className={inputCls} type="email" placeholder="you@school.in" value={form.email} onChange={set("email")} />
                   </div>
@@ -165,9 +173,13 @@ export function InquirySection({ compactHeading = false }: { compactHeading?: bo
                     <label className="mb-1.5 block text-xs font-semibold text-[var(--sm-muted)]">Phone *</label>
                     <input className={inputCls} type="tel" placeholder="+91" value={form.phone} onChange={set("phone")} />
                   </div>
-                  <div className="sm:col-span-2">
+                  <div>
                     <label className="mb-1.5 block text-xs font-semibold text-[var(--sm-muted)]">City</label>
                     <input className={inputCls} placeholder="e.g. Jodhpur" value={form.city} onChange={set("city")} />
+                  </div>
+                  <div>
+                    <label className="mb-1.5 block text-xs font-semibold text-[var(--sm-muted)]">Current software (if any)</label>
+                    <input className={inputCls} placeholder="e.g. Excel, another ERP, none" value={form.currentSoftware} onChange={set("currentSoftware")} />
                   </div>
                   <div className="sm:col-span-2">
                     <label className="mb-1.5 block text-xs font-semibold text-[var(--sm-muted)]">Anything specific you want to see?</label>

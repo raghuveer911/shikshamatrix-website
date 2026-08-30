@@ -13,18 +13,28 @@ export interface PartnerSchool {
   name: string;       // school display name
   city: string;       // city, state
   logo?: string;       // optional explicit override path; defaults to /school-logos/<id>.png
+  /** What they run on ShikshaMatrix — keep this to modules every onboarded
+   * school genuinely gets (core ERP), not a per-school claim you can't back
+   * up. Only add something more specific (e.g. "Hostel") once you've
+   * actually confirmed that school uses it. */
+  modules?: string[];
 }
 
-// TODO(Raghuveer): replace with your real 30–50 onboarded schools.
-// Keep ~40 entries for a full showcase grid, or trim the array —
-// the section lays out cleanly with anywhere from 8 to 48 entries.
+const CORE_MODULES = ["Admissions", "Fees", "Attendance", "Communication"];
+
+// TODO(Raghuveer): this list currently has your 8 confirmed onboarded
+// schools. The homepage headline elsewhere says "40+" — if that's the
+// real, current count, add the other 30+ real schools here too (with
+// their real name/city) so the showcase section and the claim actually
+// match. Until then, this file — not the headline number — is the
+// source of truth for which schools are named/shown individually.
 export const PARTNER_SCHOOLS: PartnerSchool[] = [
-  { id: "school-01", name: "R.K International School", city: "Sojat, Rajasthan" },
-  { id: "school-02", name: "Siddharth Public School", city: "Sojat, Rajasthan" },
-  { id: "school-03", name: "Yash Shiksha Sansthan Senior Sec School", city: "Pali, Rajasthan" },
-  { id: "school-04", name: "Humming Birds International School", city: "Kuchaman, Rajasthan" },
-  { id: "school-05", name: "R.N Childran School", city: "Nagore, Rajasthan" },
-  { id: "school-06", name: "Saraswati Children School", city: "Sangariya Phanta, Rajasthan" },
-  { id: "school-07", name: "Gramodaya Public School", city: "Bilara, Rajasthan" },
-  { id: "school-08", name: "KMMP Sr. Sec. Public School", city: "Dangiyawas, Rajasthan" },
+  { id: "school-01", name: "R.K International School", city: "Sojat, Rajasthan", modules: CORE_MODULES },
+  { id: "school-02", name: "Siddharth Public School", city: "Sojat, Rajasthan", modules: CORE_MODULES },
+  { id: "school-03", name: "Yash Shiksha Sansthan Senior Sec School", city: "Pali, Rajasthan", modules: CORE_MODULES },
+  { id: "school-04", name: "Humming Birds International School", city: "Kuchaman, Rajasthan", modules: CORE_MODULES },
+  { id: "school-05", name: "R.N Childran School", city: "Nagore, Rajasthan", modules: CORE_MODULES },
+  { id: "school-06", name: "Saraswati Children School", city: "Sangariya Phanta, Rajasthan", modules: CORE_MODULES },
+  { id: "school-07", name: "Gramodaya Public School", city: "Bilara, Rajasthan", modules: CORE_MODULES },
+  { id: "school-08", name: "KMMP Sr. Sec. Public School", city: "Dangiyawas, Rajasthan", modules: CORE_MODULES },
 ];

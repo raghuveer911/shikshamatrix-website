@@ -47,8 +47,8 @@ export function HeroSection() {
           <Reveal delay={400}>
             <div className="mt-10 grid max-w-md grid-cols-3 gap-4">
               {[
-                ["70%", "Less admin work"],
-                ["75+ hrs", "Saved monthly"],
+                ["40+", "Schools onboarded"],
+                ["4", "Apps included"],
                 ["1", "Platform for all"],
               ].map(([num, label]) => (
                 <div key={label}>
@@ -240,9 +240,9 @@ export function ROISection() {
     <section id="roi" className="relative py-24">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
-          eyebrow="Return on Investment"
-          title="How Many Hours Is Manual Work Costing You?"
-          sub="Move the slider to your school's size and see what your office staff gets back every month."
+          eyebrow="Estimate Your Time Savings"
+          title="See How Much Administrative Work Your School Can Automate"
+          sub="Move the slider to your school's size for an estimate — based on typical attendance, fee follow-up and reporting workload — of how much of that can run automatically instead of manually."
         />
         <Reveal>
           <div className="sm-glass rounded-3xl p-8 sm:p-10">
@@ -273,7 +273,7 @@ export function ROISection() {
             <div className="grid gap-6 md:grid-cols-2">
               {/* current cost */}
               <div className="rounded-2xl border border-[var(--sm-border)] bg-black/[0.03] p-6">
-                <div className="mb-4 text-sm font-semibold text-[var(--sm-muted)]">Current monthly staff hours</div>
+                <div className="mb-4 text-sm font-semibold text-[var(--sm-muted)]">Estimated monthly staff hours today</div>
                 {[
                   ["Attendance & registers", roi.attendance],
                   ["Fee tracking & follow-ups", roi.fees],
@@ -293,20 +293,23 @@ export function ROISection() {
               {/* saved */}
               <div className="flex flex-col justify-between rounded-2xl border border-emerald-500/25 bg-emerald-500/[0.06] p-6">
                 <div>
-                  <div className="mb-2 text-sm font-semibold text-emerald-600">With ShikshaMatrix</div>
+                  <div className="mb-2 text-sm font-semibold text-emerald-600">With ShikshaMatrix (estimated)</div>
                   <div className="sm-display text-lg font-bold">{roi.withSM} hrs/month</div>
                   <p className="mt-2 text-xs leading-relaxed text-[var(--sm-muted)]">
                     Attendance, reminders, reports and records run automatically. Staff only handles exceptions.
                   </p>
                 </div>
                 <div className="mt-6 rounded-2xl bg-emerald-500/15 p-5 text-center">
-                  <div className="sm-display text-4xl font-bold text-emerald-600">{roi.saved}+ hrs</div>
-                  <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-emerald-600/90">Saved every month</div>
+                  <div className="sm-display text-4xl font-bold text-emerald-600">~{roi.saved} hrs</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-emerald-600/90">Estimated administrative time affected, per month</div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 text-center">
+            <p className="mt-6 text-center text-xs text-[var(--sm-muted)]">
+              This is a rough estimate based on typical school workloads, not a guarantee — actual time saved depends on your school's current processes.
+            </p>
+            <div className="mt-4 text-center">
               <PrimaryCTA onClick={() => scrollToId("contact")}>See This For Your School — Book a Demo</PrimaryCTA>
             </div>
           </div>

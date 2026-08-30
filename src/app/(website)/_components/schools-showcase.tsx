@@ -25,7 +25,7 @@ function SchoolCard({ school }: { school: PartnerSchool }) {
   const logoSrc = school.logo || `/school-logos/${school.id}.png`;
 
   return (
-    <div className="sm-glass mx-2.5 flex w-[220px] flex-shrink-0 items-center gap-3 rounded-2xl px-4 py-3.5">
+    <div className="sm-glass mx-2.5 flex w-[244px] flex-shrink-0 items-center gap-3 rounded-2xl px-4 py-3.5">
       {!broken ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -42,6 +42,9 @@ function SchoolCard({ school }: { school: PartnerSchool }) {
       <div className="min-w-0">
         <div className="truncate text-sm font-semibold text-[var(--sm-text)]">{school.name}</div>
         <div className="truncate text-xs text-[var(--sm-muted)]">{school.city}</div>
+        {school.modules && school.modules.length > 0 && (
+          <div className="truncate text-[10px] text-indigo-500/80">{school.modules.join(" · ")}</div>
+        )}
       </div>
     </div>
   );
@@ -73,8 +76,8 @@ export function SchoolsShowcaseSection() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Real Schools, Real Results"
-          title={`30+ Schools Run on ShikshaMatrix`}
-          sub="From single campuses to multi-branch groups — here's a few of the schools already saving hours every week."
+          title={`40+ Schools Run on ShikshaMatrix`}
+          sub="From single campuses to multi-branch groups — here are a few of the schools already running on ShikshaMatrix."
         />
       </div>
       <Reveal delay={100}>

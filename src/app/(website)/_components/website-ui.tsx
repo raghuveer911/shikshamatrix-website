@@ -11,7 +11,11 @@ import { usePathname } from "next/navigation";
 // Where the nav buttons redirect. Adjust to your live URLs.
 const ADMIN_APP_URL = process.env.NEXT_PUBLIC_ADMIN_APP_URL || "https://school.shikshamatrix.in";
 export const APP_LINKS = {
-  register: `${ADMIN_APP_URL}/login?view=register`, // school onboarding — same login page, register steps
+  // TURNED OFF public self-registration — "Register" now leads to the
+  // same demo/enquiry form every other CTA on the site uses, not a
+  // form that creates a live account instantly. A relative path (not
+  // ADMIN_APP_URL) since /contact lives on this same site.
+  register: `/contact`, // was: `${ADMIN_APP_URL}/login?view=register`
   login: `${ADMIN_APP_URL}/login`,                   // school admin login
   download: "/download",                             // APK download page — teachers/staff/parents/students
 };
@@ -126,8 +130,8 @@ export function scrollToId(id: string) {
 
 // ── Navbar — floating liquid glass pill ──────────────────────
 const NAV_ITEMS = [
-  { label: "Problems We Solve", id: "problems" },
   { label: "Platform", id: "platform" },
+  { label: "Skill OS", id: "platform-verticals" },
   { label: "ROI", id: "roi" },
   { label: "Pricing", id: "pricing" },
   { label: "Contact", id: "contact" },

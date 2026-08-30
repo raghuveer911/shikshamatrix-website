@@ -259,6 +259,106 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "parent-communication-school-app-guide",
+    title: "Parent Communication in Schools: Moving Beyond WhatsApp Groups",
+    description: "Why teacher-run WhatsApp groups break down at scale, and what a proper parent-communication system actually needs to get right.",
+    date: "2026-08-30",
+    readMinutes: 6,
+    category: "Communication",
+    tags: ["parent communication", "school communication software", "parent app"],
+    author: SHIKSHAMATRIX_AUTHOR,
+    content: [
+      {
+        paragraphs: [
+          "Most Indian schools end up running parent communication through a patchwork of individual teachers' WhatsApp groups, printed circulars, and phone calls. It works well enough at small scale — until a school has 500+ parents, multiple classes, and a front office fielding the same question ten different ways because there's no single official channel.",
+        ],
+      },
+      {
+        heading: "The problem isn't the volume of messages — it's the lack of one official channel",
+        paragraphs: [
+          "When every class has its own teacher-run WhatsApp group, a school has as many communication channels as it has classes — each with its own tone, its own reliability, and its own risk of a message getting lost, forwarded incorrectly, or sent to the wrong group. There's no single place a parent can check for everything: attendance, fees, homework, and a notice all live in different places.",
+        ],
+      },
+      {
+        heading: "Ask whether the system separates notices, alerts, and conversations",
+        paragraphs: [
+          "Not all communication is the same. A school-wide notice about a holiday is different from an individual alert (\"your child was marked absent today\") which is different from a two-way conversation (a parent asking about a fee due date). A proper system keeps these distinct rather than dumping everything into one undifferentiated feed — otherwise urgent alerts get buried under routine notices.",
+        ],
+      },
+      {
+        heading: "Check what happens when a teacher leaves",
+        paragraphs: [
+          "A WhatsApp group is tied to whichever teacher created and administers it. When that teacher leaves the school, the group's history, its membership list, and control of it can leave with them. A school-owned communication system keeps that history and access with the institution, not with an individual staff member's personal phone number.",
+        ],
+      },
+      {
+        heading: "Look at read receipts and delivery confirmation, not just \"sent\"",
+        paragraphs: [
+          "For anything time-sensitive — a fee due date, a schedule change — knowing a message was actually opened matters more than knowing it was sent. A system that shows which parents have and haven't seen a notice lets the front office follow up with the right people instead of re-sending the same message to everyone.",
+        ],
+      },
+      {
+        heading: "Bringing it together",
+        paragraphs: [
+          "The goal isn't to replace every informal conversation with a formal system — it's to have one reliable, school-owned channel for everything that actually matters: attendance, fees, homework, and official notices. Everything else can stay informal; what shouldn't be informal is anything a parent needs to be able to find again later.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "what-is-skill-development-management-software",
+    title: "What Is Skill Development Management Software?",
+    description: "A plain-language explainer of what skill-development / training-center management software actually covers — from enrollment through placement.",
+    date: "2026-08-30",
+    readMinutes: 7,
+    category: "Skill Development",
+    tags: ["skill development management software", "training center management software", "learner management system"],
+    author: SHIKSHAMATRIX_AUTHOR,
+    content: [
+      {
+        paragraphs: [
+          "Skill-development or training-center management software is the training-organization equivalent of a School ERP — instead of managing students through a school year, it manages learners through a program: from enrollment, through training and assessment, to certification and (ideally) a job.",
+        ],
+      },
+      {
+        heading: "Learner management is the foundation",
+        paragraphs: [
+          "At its core, this kind of software tracks who a learner is — registration details, KYC/documents, educational background, and eligibility for a given program — the same way a School ERP tracks a student's admission record. Without this foundation, every other module (attendance, assessment, certification) has nothing to attach to.",
+        ],
+      },
+      {
+        heading: "Batch and trainer management keep programs running day to day",
+        paragraphs: [
+          "A training organization typically runs multiple batches across one or more centers, each with its own trainer, schedule, and capacity. Software built for this needs to handle batch creation, trainer allocation, and scheduling as first-class concepts — not as an afterthought bolted onto a generic course-catalog tool.",
+        ],
+      },
+      {
+        heading: "Assessment and certification are where the record becomes credible",
+        paragraphs: [
+          "A learner's progress needs to be tracked through tests, practical assessments, and internal/external evaluation — and the resulting certificate needs to be verifiable (a QR code or certificate number a third party, like an employer, can check). Without this, a certificate is just a PDF with no way to confirm it's genuine.",
+        ],
+      },
+      {
+        heading: "Placement is what separates training software from outcome infrastructure",
+        paragraphs: [
+          "Many tools stop at certification. The more useful version of this category also tracks what happens after: employer relationships, job openings, candidate matching, interview tracking, and eventual placement and retention. That's the difference between a system that proves someone finished a course, and one that shows whether the program actually led to employment.",
+        ],
+      },
+      {
+        heading: "Where this connects back to school management",
+        paragraphs: [
+          "Training organizations and schools are structurally similar — both manage a group of people moving through a structured program over time, with attendance, assessment, and communication needs. That overlap is why platforms built first for school management are a natural foundation to extend into skill development, rather than two unrelated categories of software.",
+        ],
+      },
+      {
+        heading: "Where ShikshaMatrix fits",
+        paragraphs: [
+          "ShikshaMatrix's Skill OS — covering program, batch, trainer, assessment, certification and placement management — is currently in active development, built on the same connected data model as ShikshaMatrix's live School OS. See the Skill Development page for the planned workflow and module architecture.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

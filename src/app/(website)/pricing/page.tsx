@@ -122,6 +122,27 @@ export default function PricingPage() {
               </Link>{" "}
               — we'll work out something that fits.
             </p>
+            <p className="mt-4 text-xs text-[var(--sm-muted)]">
+              Plan prices cover the platform itself. Third-party pass-through costs — payment gateway fees on online
+              collections, and SMS/WhatsApp charges beyond your plan's included limit — are billed at actual cost,
+              not marked up.
+            </p>
+          </Reveal>
+
+          <Reveal delay={360} className="mx-auto mt-14 max-w-3xl">
+            <div className="sm-glass rounded-3xl border border-dashed border-[var(--sm-border-hi)] p-8 text-center">
+              <div className="mb-1 inline-flex items-center gap-2 rounded-full bg-amber-500/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-amber-600">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-500" /> Coming Soon
+              </div>
+              <h3 className="sm-display mt-3 text-lg font-bold text-[var(--sm-text)]">Skill OS Pricing</h3>
+              <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[var(--sm-muted)]">
+                Skill OS is in active development. Pricing (per learner / batch / program, depending on your setup)
+                will be announced closer to launch.
+              </p>
+              <div className="mt-5">
+                <GhostCTA href="/skill-development">Learn more about Skill OS</GhostCTA>
+              </div>
+            </div>
           </Reveal>
         </div>
       </main>
